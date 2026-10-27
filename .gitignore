@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+.env
+.env.*
+!.env.example
+
+# Raw downloaded exam PDFs. USABO exams are CEE property and must not be stored or redistributed.
+data/raw/
