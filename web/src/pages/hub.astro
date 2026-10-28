@@ -14,17 +14,17 @@ const official = (round: 'open' | 'semifinal', y: string) => links[round][y];
 const label = { open: 'Open', semifinal: 'Semifinal' } as const;
 ---
 
-<Base title="Hub: Olympiad Prep" current="hub" description="Official F=ma exams, USNCO and USABO resources, and past USABO cutoffs.">
-  <div class="wrap">
-    <h1>Hub</h1>
+<Base title="Official exams and cutoffs: Olympiad Prep" current="resources" crumbs={[{ label: 'Resources' }]} description="Official F=ma exams, USNCO and USABO resources, and past USABO cutoffs.">
+  <div class="resources">
+    <h1>Official exams and cutoffs</h1>
     <p class="lede">Official exams and score benchmarks, sorted by subject.</p>
 
     <section id="physics" class="subject">
-      <div class="side">
+      <div class="subject-head">
         <h2>Physics</h2>
         <p>F=ma is a 25-question, 75-minute multiple-choice exam from AAPT. These papers are tagged by topic and can be sat here.</p>
       </div>
-      <div class="body">
+      <div class="subject-body">
         <ul class="rows">
           {
             fma.map((p) => (
@@ -49,11 +49,11 @@ const label = { open: 'Open', semifinal: 'Semifinal' } as const;
     </section>
 
     <section id="chemistry" class="subject">
-      <div class="side">
+      <div class="subject-head">
         <h2>Chemistry</h2>
         <p>USNCO is run by the American Chemical Society.</p>
       </div>
-      <div class="body">
+      <div class="subject-body">
         <p>
           USNCO papers are not on this site yet. The local exam is 60 multiple-choice questions in 110
           minutes, and the national exam adds written and lab parts. ACS posts past exams with answer keys on
@@ -63,11 +63,11 @@ const label = { open: 'Open', semifinal: 'Semifinal' } as const;
     </section>
 
     <section id="biology" class="subject">
-      <div class="side">
+      <div class="subject-head">
         <h2>Biology</h2>
         <p>USABO is run by the Center for Excellence in Education (CEE).</p>
       </div>
-      <div class="body">
+      <div class="subject-body">
         <p>
           CEE does not allow its exams to be stored or redistributed without permission, so no USABO
           questions are kept here. Instead, the table links to CEE's own copy of each exam and answer key
@@ -129,8 +129,8 @@ const label = { open: 'Open', semifinal: 'Semifinal' } as const;
 </Base>
 
 <style>
-  h1 {
-    margin-top: clamp(36px, 6vw, 72px);
+  .resources {
+    max-width: 1000px;
   }
   .lede {
     font-size: var(--step-1);
@@ -145,7 +145,7 @@ const label = { open: 'Open', semifinal: 'Semifinal' } as const;
     margin-top: 40px;
     border-top: 1px solid var(--rule);
   }
-  .side p {
+  .subject-head p {
     font-size: var(--step--1);
     color: var(--ink-soft);
     margin-top: 10px;
@@ -179,7 +179,7 @@ const label = { open: 'Open', semifinal: 'Semifinal' } as const;
     color: var(--ink-soft);
     margin-top: 18px;
   }
-  .body > p:first-child {
+  .subject-body > p:first-child {
     margin-top: 0;
   }
 

@@ -1,5 +1,5 @@
 .paper {
-  padding-top: clamp(28px, 5vw, 56px);
+  max-width: 1080px;
 }
 
 [data-state='intro'] .test-panel,
@@ -84,10 +84,10 @@
   padding-bottom: 16px;
   border-bottom: 1px solid var(--rule);
   position: sticky;
-  top: 0;
+  top: 56px;
   z-index: 2;
   background: var(--paper);
-  padding-top: 8px;
+  padding-top: 12px;
 }
 .bar h1 {
   font-size: 1.3rem;
@@ -193,8 +193,8 @@
 
 .sheet {
   position: sticky;
-  top: 84px;
-  max-height: calc(100vh - 100px);
+  top: 150px;
+  max-height: calc(100vh - 168px);
   overflow-y: auto;
   padding: 16px 18px;
   background: var(--sheet);

@@ -79,6 +79,10 @@ export function topicNames(): Record<string, string> {
   );
 }
 
+/** Physics topics with their subtopics, in syllabus order. */
+export const physicsTopics = (): { slug: string; name: string; subtopics: { slug: string; name: string }[] }[] =>
+  taxonomy('physics').topics;
+
 /** Biology topics with their subtopics, in syllabus order. */
 export const biologyTopics = (): { slug: string; name: string; subtopics: { slug: string; name: string }[] }[] =>
   taxonomy('biology').topics;

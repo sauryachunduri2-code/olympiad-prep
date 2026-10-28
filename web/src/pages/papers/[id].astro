@@ -38,10 +38,14 @@ const data = {
 const json = JSON.stringify(data).replace(/</g, '\\u003c');
 ---
 
-<Base title={`${title}: Olympiad Prep`} current="hub" description={`Sit the ${title} paper under timed conditions.`}>
-  <div class="wrap paper" data-paper data-state="intro">
+<Base
+  title={`${title}: Olympiad Prep`}
+  current="fma"
+  crumbs={[{ label: 'Courses' }, { label: 'F=ma', href: '/course/fma/' }, { label: `${title} exam` }]}
+  description={`Sit the ${title} paper under timed conditions.`}
+>
+  <div class="paper" data-paper data-state="intro">
     <section class="intro-panel">
-      <p class="crumb"><a href="/hub/#physics">Hub</a> / Physics</p>
       <h1>{title}</h1>
       <dl class="facts">
         <div><dt>Questions</dt><dd>{count}, one point each</dd></div>
@@ -97,7 +101,6 @@ const json = JSON.stringify(data).replace(/</g, '\\u003c');
     </section>
 
     <section class="results-panel">
-      <p class="crumb"><a href="/hub/#physics">Hub</a> / Physics</p>
       <h1>{title} results</h1>
       <div id="results"></div>
     </section>

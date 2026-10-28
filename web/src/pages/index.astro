@@ -1,206 +1,166 @@
 ---
 import Base from '../layouts/Base.astro';
+import CourseArt from '../components/CourseArt.astro';
+import { COURSES, fmaTopics, fmaQuestionCount, usaboQuestionCount } from '../lib/courses';
 import { loadPapers, paperTitle } from '../lib/papers';
-import { rich, richInline } from '../lib/math';
 
-const papers = loadPapers();
-const sample = papers.find((p) => p.id === 'fma-2024')!;
-const q = sample.questions[0];
-const letters = ['A', 'B', 'C', 'D', 'E'];
-const fmaCount = papers.filter((p) => p.paper.competition_id === 'fma').length;
+const topics = fmaTopics();
+const exams = loadPapers()
+  .filter((p) => p.paper.competition_id === 'fma')
+  .map((p) => ({ id: p.id, title: paperTitle(p), limit: p.paper.time_limit_minutes * 60 }));
+const allIds = [...new Set(topics.flatMap((t) => t.questions.map((q) => q.id)))];
+const clientData = JSON.stringify({
+  topics: topics.map((t) => ({ slug: t.slug, name: t.name, ids: t.questions.map((q) => q.id) })),
+  exams,
+  allIds,
+});
 ---
 
-<Base title="Olympiad Prep: practice on the real exams">
-  <section class="hero wrap" data-hero data-answer={q.answer_index}>
-    <div class="intro">
-      <h1>Practice on the real exams.</h1>
-      <p class="lede">
-        Sit past F=ma papers under the clock, see your score by topic, and read how each question is
-        solved. USNCO and USABO material is on the way.
-      </p>
-      <a class="btn" href={`/papers/${sample.id}/`}>Sit the {paperTitle(sample)} paper</a>
-      <a class="btn quiet" href="/hub/">Browse the Hub</a>
-    </div>
+<Base title="Olympiad Prep" current="home">
+  <section class="welcome">
+    <h1>Practice for the science olympiads</h1>
+    <p class="lede">
+      Real past questions from F=ma, USABO, and USNCO. Work through them by topic, or sit a full exam against the clock.
+    </p>
+  </section>
 
-    <div class="question" aria-labelledby="hero-q">
-      <p class="source" id="hero-q">From the {paperTitle(sample)} exam, question 1</p>
-      <div class="stem" set:html={rich(q.stem)} />
-      <ol class="choices">
-        {
-          q.choices!.map((c, i) => (
-            <li>
-              <button class="bubble" type="button" data-choice={i} aria-pressed="false" aria-label={`Choice ${letters[i]}`}>
-                {letters[i]}
-              </button>
-              <span set:html={richInline(c)} />
-            </li>
-          ))
-        }
-      </ol>
-      <div class="reveal" hidden aria-live="polite">
-        <p class="verdict"></p>
-        <div class="why" set:html={rich(q.solution)} />
-      </div>
+  <section class="resume panel" data-resume hidden>
+    <div>
+      <p class="resume-kicker muted" data-resume-kicker></p>
+      <h2 data-resume-title></h2>
+    </div>
+    <a class="btn" data-resume-link href="/">Continue</a>
+  </section>
+
+  <section class="section">
+    <h2>Courses</h2>
+    <div class="cards">
+      <a class="panel course-card" href="/course/fma/" style={`--c:${COURSES.fma.color}`}>
+        <div class="art"><CourseArt kind="physics" /></div>
+        <div class="body">
+          <span class="kind">{COURSES.fma.discipline}</span>
+          <h3>{COURSES.fma.name}</h3>
+          <p>{fmaQuestionCount()} questions in {topics.length} topics, and {exams.length} full exams you can sit timed.</p>
+          <div class="track" aria-hidden="true"><i data-course-bar></i></div>
+          <p class="stat" data-course-stat>Not started</p>
+        </div>
+      </a>
+      <a class="panel course-card" href="/course/usabo/" style={`--c:${COURSES.usabo.color}`}>
+        <div class="art"><CourseArt kind="bio" /></div>
+        <div class="body">
+          <span class="kind">{COURSES.usabo.discipline}</span>
+          <h3>{COURSES.usabo.name}</h3>
+          <p>{usaboQuestionCount()} Open Exam questions sorted by topic, linked to the official exams, plus past cutoff scores.</p>
+        </div>
+      </a>
+      <a class="panel course-card" href="/course/usnco/" style={`--c:${COURSES.usnco.color}`}>
+        <div class="art"><CourseArt kind="chem" /></div>
+        <div class="body">
+          <span class="kind">{COURSES.usnco.discipline}</span>
+          <h3>{COURSES.usnco.name}</h3>
+          <p>Practice questions are not here yet. The course page links to the official ACS exams.</p>
+        </div>
+      </a>
     </div>
   </section>
 
-  <section class="wrap now">
-    <div>
-      <h3>Sit a full paper</h3>
-      <p>
-        {fmaCount} F=ma papers are ready, 25 questions each, with the same 75-minute limit as the real
-        thing. Your answers go on an answer sheet like the one in the exam room.
-      </p>
-    </div>
-    <div>
-      <h3>Find your weak topics</h3>
-      <p>
-        Every question is tagged by subtopic, so your results show where points went: kinematics,
-        rotation, fluids, and so on.
-      </p>
-    </div>
-    <div>
-      <h3>Read the official sources</h3>
-      <p>
-        The Hub links every exam and solution PDF at its publisher, and lists past USABO cutoff scores
-        so you know what a qualifying score looked like.
-      </p>
-    </div>
+  <section class="section" data-weak hidden>
+    <h2>Worth another look</h2>
+    <p class="sub">Topics where you missed the most questions last time.</p>
+    <div class="weak-list" data-weak-list></div>
   </section>
+
+  <script type="application/json" id="home-data" set:html={clientData.replace(/</g, '\\u003c')} />
+  <script>
+    import { attemptFor, lastPractice, loadPractice, summarize } from '../scripts/progress';
+
+    const data = JSON.parse(document.getElementById('home-data')!.textContent!);
+    const progress = loadPractice();
+
+    // F=ma card: how many questions have been answered correctly at least once most recently
+    const done = summarize(progress, data.allIds);
+    const answered = done.correct + done.missed;
+    const bar = document.querySelector<HTMLElement>('[data-course-bar]')!;
+    const stat = document.querySelector<HTMLElement>('[data-course-stat]')!;
+    bar.style.width = `${(done.correct / data.allIds.length) * 100}%`;
+    stat.textContent = answered === 0 ? 'Not started' : `${done.correct} of ${data.allIds.length} correct, ${answered} tried`;
+
+    // Resume: an exam in progress beats the last practice topic
+    const resume = document.querySelector<HTMLElement>('[data-resume]')!;
+    const setResume = (kicker: string, title: string, href: string, label: string) => {
+      (document.querySelector('[data-resume-kicker]') as HTMLElement).textContent = kicker;
+      (document.querySelector('[data-resume-title]') as HTMLElement).textContent = title;
+      const link = document.querySelector<HTMLAnchorElement>('[data-resume-link]')!;
+      link.href = href;
+      link.textContent = label;
+      resume.hidden = false;
+    };
+    const running = data.exams
+      .map((e: { id: string; title: string; limit: number }) => ({ e, a: attemptFor(e.id) }))
+      .find(({ e, a }: any) => a && !a.submittedAt && a.startedAt + e.limit * 1000 > Date.now());
+    if (running) {
+      const left = Math.floor((running.a.startedAt + running.e.limit * 1000 - Date.now()) / 60000);
+      setResume('Exam in progress', `${running.e.title}, about ${left} minutes left`, `/papers/${running.e.id}/`, 'Resume exam');
+    } else {
+      const last = lastPractice();
+      if (last) setResume('Pick up where you left off', `${last.name} practice`, `/practice/${last.course}/${last.topic}/`, 'Continue practice');
+    }
+
+    // Weak spots: topics with at least one missed question, worst first
+    const weak = data.topics
+      .map((t: { slug: string; name: string; ids: string[] }) => ({ t, s: summarize(progress, t.ids) }))
+      .filter(({ s }: any) => s.missed > 0)
+      .sort((a: any, b: any) => b.s.missed - a.s.missed)
+      .slice(0, 4);
+    if (weak.length) {
+      const list = document.querySelector<HTMLElement>('[data-weak-list]')!;
+      list.innerHTML = weak
+        .map(
+          ({ t, s }: any) =>
+            `<a class="weak panel" href="/practice/fma/${t.slug}/"><b>${t.name}</b><span class="muted">${s.missed} missed of ${s.correct + s.missed} tried</span></a>`,
+        )
+        .join('');
+      document.querySelector<HTMLElement>('[data-weak]')!.hidden = false;
+    }
+  </script>
 </Base>
 
-<script>
-  const root = document.querySelector<HTMLElement>('[data-hero]')!;
-  const key = Number(root.dataset.answer);
-  const buttons = root.querySelectorAll<HTMLButtonElement>('.bubble');
-  const reveal = root.querySelector<HTMLElement>('.reveal')!;
-  const verdict = root.querySelector<HTMLElement>('.verdict')!;
-  const letters = ['A', 'B', 'C', 'D', 'E'];
-
-  buttons.forEach((btn) =>
-    btn.addEventListener('click', () => {
-      const picked = Number(btn.dataset.choice);
-      buttons.forEach((b) => {
-        const i = Number(b.dataset.choice);
-        b.setAttribute('aria-pressed', String(i === picked));
-        b.classList.toggle('is-key', i === key);
-        b.classList.toggle('is-miss', i === picked && i !== key);
-        b.disabled = true;
-      });
-      verdict.textContent =
-        picked === key ? `Correct. The answer is ${letters[key]}.` : `Not this one. The answer is ${letters[key]}.`;
-      verdict.dataset.ok = String(picked === key);
-      reveal.hidden = false;
-    }),
-  );
-</script>
-
 <style>
-  .hero {
-    display: grid;
-    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
-    gap: clamp(32px, 6vw, 88px);
-    padding-top: clamp(40px, 8vw, 88px);
-    align-items: start;
-  }
-  .intro h1 {
-    max-width: 11ch;
-    margin-bottom: 20px;
+  .welcome h1 {
+    max-width: 18ch;
   }
   .lede {
+    margin-top: 14px;
     font-size: var(--step-1);
-    line-height: 1.5;
-    color: var(--ink-soft);
-    margin-bottom: 28px;
+    color: var(--muted);
+    max-width: 52ch;
   }
-  .intro .btn {
-    margin: 0 10px 10px 0;
-  }
-
-  .question {
-    background: var(--sheet);
-    border: 1px solid var(--rule);
-    border-left: 4px solid var(--blue);
-    border-radius: 3px;
-    padding: clamp(20px, 3vw, 32px);
-  }
-  .source {
-    font: 560 var(--step--1) / 1.3 var(--sans);
-    color: var(--ink-soft);
-    margin-bottom: 14px;
-  }
-  .stem :global(p) {
-    margin-bottom: 0.9em;
-  }
-  .choices {
-    list-style: none;
-    margin: 18px 0 0;
-    padding: 0;
-    display: grid;
-    gap: 6px;
-  }
-  .choices li {
-    display: grid;
-    grid-template-columns: 28px 1fr;
+  .resume {
+    margin-top: 28px;
+    padding: 20px 24px;
+    display: flex;
     align-items: center;
-    gap: 14px;
-    padding-block: 5px;
+    justify-content: space-between;
+    gap: 20px;
+    border-color: var(--accent);
   }
-  .reveal {
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid var(--rule);
+  .resume[hidden] {
+    display: none;
   }
-  .verdict {
-    font: 650 var(--step-0) / 1.3 var(--sans);
-    margin-bottom: 8px;
+  .resume h2 {
+    font-size: 1.3rem;
   }
-  .verdict[data-ok='false'] {
-    color: var(--red);
+  .resume-kicker {
+    margin: 0 0 4px;
+    font-size: 0.85rem;
   }
-  .verdict[data-ok='true'] {
-    color: var(--blue);
+  .stat {
+    font-size: 0.85rem !important;
   }
-  .why :global(p) {
-    font-size: var(--step--1);
-    color: var(--ink-soft);
-    margin: 0;
-  }
-
-  .now {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin-top: clamp(56px, 9vw, 104px);
-    border-top: 1px solid var(--rule);
-  }
-  .now > div {
-    padding: 28px clamp(0px, 2vw, 28px) 0 0;
-  }
-  .now > div + div {
-    padding-left: clamp(0px, 2vw, 28px);
-    border-left: 1px solid var(--rule);
-  }
-  .now h3 {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-  }
-  .now p {
-    font-size: var(--step--1);
-    color: var(--ink-soft);
-  }
-
-  @media (max-width: 860px) {
-    .hero {
-      grid-template-columns: 1fr;
-    }
-    .now {
-      grid-template-columns: 1fr;
-    }
-    .now > div + div {
-      padding-left: 0;
-      border-left: 0;
-      border-top: 1px solid var(--rule);
-      margin-top: 24px;
+  @media (max-width: 600px) {
+    .resume {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 </style>

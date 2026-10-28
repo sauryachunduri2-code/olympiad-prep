@@ -4,12 +4,25 @@ import '@fontsource-variable/schibsted-grotesk';
 import 'katex/dist/katex.min.css';
 import '../styles/global.css';
 
+type Crumb = { label: string; href?: string };
 interface Props {
   title: string;
   description?: string;
-  current?: 'hub';
+  current?: 'home' | 'fma' | 'usabo' | 'usnco' | 'resources';
+  crumbs?: Crumb[];
 }
-const { title, description = 'Practice real F=ma exams under timed conditions and track your results.', current } = Astro.props;
+const {
+  title,
+  description = 'Practice real F=ma, USABO, and USNCO exam questions by topic and under the clock.',
+  current,
+  crumbs = [],
+} = Astro.props;
+
+const courses = [
+  { id: 'fma', name: 'F=ma', sub: 'Physics', color: 'var(--physics)' },
+  { id: 'usabo', name: 'USABO', sub: 'Biology', color: 'var(--bio)' },
+  { id: 'usnco', name: 'USNCO', sub: 'Chemistry', color: 'var(--chem)' },
+];
 ---
 
 <!doctype html>
@@ -19,26 +32,122 @@ const { title, description = 'Practice real F=ma exams under timed conditions an
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='16' rx='12' ry='8' fill='%232f3436'/%3E%3C/svg%3E" />
+    <meta name="theme-color" content="#0b1520" data-theme-color />
+    <script is:inline>
+      // Set the theme before first paint so there is no flash. 'system' follows the OS.
+      (function () {
+        var pref = 'system';
+        try {
+          pref = localStorage.getItem('olympiad:theme') || 'system';
+        } catch (e) {}
+        if (pref !== 'light' && pref !== 'dark') pref = 'system';
+        var light = pref === 'light' || (pref === 'system' && matchMedia('(prefers-color-scheme: light)').matches);
+        document.documentElement.dataset.pref = pref;
+        document.documentElement.dataset.theme = light ? 'light' : 'dark';
+      })();
+    </script>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b1520'/%3E%3Cellipse cx='16' cy='16' rx='10' ry='7' fill='%234da3ff'/%3E%3C/svg%3E" />
   </head>
   <body>
-    <header class="site-head">
-      <div class="wrap">
-        <a class="brand" href="/">Olympiad Prep</a>
-        <nav aria-label="Main">
-          <a href="/hub/" aria-current={current === 'hub' ? 'page' : undefined}>Hub</a>
+    <div class="app" data-app>
+      <aside class="side" id="side" aria-label="Site">
+        <a class="brand" href="/">
+          <svg width="30" height="22" viewBox="0 0 30 22" aria-hidden="true"><ellipse cx="15" cy="11" rx="13" ry="9" style="fill: var(--accent)"></ellipse></svg>
+          Olympiad Prep
+        </a>
+        <nav class="nav-group" aria-label="Learn">
+          <h2>Learn</h2>
+          <a class="nav-link" href="/" aria-current={current === 'home' ? 'page' : undefined}>Home</a>
         </nav>
+        <nav class="nav-group" aria-label="Courses">
+          <h2>Courses</h2>
+          {
+            courses.map((c) => (
+              <a class="nav-link" href={`/course/${c.id}/`} style={`--c:${c.color}`} aria-current={current === c.id ? 'page' : undefined}>
+                <span class="swatch"></span>{c.name}<small>{c.sub}</small>
+              </a>
+            ))
+          }
+        </nav>
+        <nav class="nav-group" aria-label="Resources">
+          <h2>Resources</h2>
+          <a class="nav-link" href="/hub/" aria-current={current === 'resources' ? 'page' : undefined}>Official exams and cutoffs</a>
+        </nav>
+        <div class="theme" role="group" aria-label="Color theme">
+          <p>Theme</p>
+          <div class="theme-options">
+            <button type="button" data-theme-pick="system" aria-pressed="false">System</button>
+            <button type="button" data-theme-pick="light" aria-pressed="false">Light</button>
+            <button type="button" data-theme-pick="dark" aria-pressed="false">Dark</button>
+          </div>
+        </div>
+        <p class="side-note">Your progress is saved in this browser. Clearing site data resets it.</p>
+      </aside>
+
+      <div class="scrim" data-scrim></div>
+
+      <div class="content">
+        <header class="top">
+          <button class="menu-btn" type="button" aria-controls="side" aria-expanded="false" data-menu>
+            <span class="sr-only">Open menu</span>
+            <svg width="18" height="14" viewBox="0 0 18 14" aria-hidden="true"><path d="M1 1h16M1 7h16M1 13h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+          </button>
+          <nav class="crumbs" aria-label="Breadcrumb">
+            {
+              crumbs.length === 0 ? (
+                <span aria-current="page">Home</span>
+              ) : (
+                crumbs.map((c, i) => (
+                  <>
+                    {i > 0 && <span class="sep" aria-hidden="true">/</span>}
+                    {c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}
+                  </>
+                ))
+              )
+            }
+          </nav>
+        </header>
+        <main class="main"><slot /></main>
       </div>
-    </header>
-    <main><slot /></main>
-    <footer class="site-foot">
-      <div class="wrap">
-        <p>
-          Past exam questions belong to their publishers: AAPT for F=ma, ACS for USNCO, and the Center for
-          Excellence in Education for USABO. They are shown here for practice. Check the official source
-          before relying on any answer.
-        </p>
-      </div>
-    </footer>
+    </div>
+
+    <script>
+      const app = document.querySelector<HTMLElement>('[data-app]')!;
+      const btn = document.querySelector<HTMLButtonElement>('[data-menu]')!;
+      const set = (open: boolean) => {
+        app.dataset.open = String(open);
+        btn.setAttribute('aria-expanded', String(open));
+      };
+      btn.addEventListener('click', () => set(app.dataset.open !== 'true'));
+
+      // Theme: System follows the OS and updates live; Light and Dark are remembered choices.
+      const root = document.documentElement;
+      const media = matchMedia('(prefers-color-scheme: light)');
+      const meta = document.querySelector<HTMLMetaElement>('[data-theme-color]')!;
+      const apply = (pref: string) => {
+        const light = pref === 'light' || (pref === 'system' && media.matches);
+        root.dataset.pref = pref;
+        root.dataset.theme = light ? 'light' : 'dark';
+        meta.content = light ? '#edf2f7' : '#0b1520';
+        document.querySelectorAll<HTMLButtonElement>('[data-theme-pick]').forEach((b) =>
+          b.setAttribute('aria-pressed', String(b.dataset.themePick === pref)),
+        );
+      };
+      apply(root.dataset.pref ?? 'system');
+      document.querySelectorAll<HTMLButtonElement>('[data-theme-pick]').forEach((b) =>
+        b.addEventListener('click', () => {
+          const pref = b.dataset.themePick!;
+          try {
+            localStorage.setItem('olympiad:theme', pref);
+          } catch {
+            /* the choice just will not be remembered */
+          }
+          apply(pref);
+        }),
+      );
+      media.addEventListener('change', () => root.dataset.pref === 'system' && apply('system'));
+      document.querySelector('[data-scrim]')!.addEventListener('click', () => set(false));
+      document.addEventListener('keydown', (e) => e.key === 'Escape' && set(false));
+    </script>
   </body>
 </html>

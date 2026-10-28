@@ -1,0 +1,86 @@
+---
+// Line art for a course header. One scene per subject, drawn in the course color (--c).
+interface Props {
+  kind: 'physics' | 'chem' | 'bio';
+}
+const { kind } = Astro.props;
+const W = 640;
+const H = 160;
+
+// physics: launch arcs at several speeds, with a dot every fixed time step
+const arcs = [0.55, 0.8, 1.05].map((k, i) => {
+  const pts: [number, number][] = [];
+  for (let t = 0; t <= 1.0001; t += 0.05) {
+    const x = 40 + t * 520 * k;
+    const y = 138 - (4 * 52 * k * t * (1 - t) + 0);
+    pts.push([x, y]);
+  }
+  return { pts, o: 0.9 - i * 0.22 };
+});
+
+// chemistry: a patch of hexagons with atoms at the vertices
+const hexes: { cx: number; cy: number }[] = [];
+const r = 26;
+for (let row = -1; row < 5; row++)
+  for (let col = -1; col < 14; col++)
+    hexes.push({ cx: 60 + col * r * 1.732 + (row % 2) * r * 0.866, cy: 20 + row * r * 1.5 });
+const hexPoints = (cx: number, cy: number) =>
+  Array.from({ length: 6 }, (_, i) => {
+    const a = (Math.PI / 3) * i + Math.PI / 6;
+    return `${(cx + r * Math.cos(a)).toFixed(1)},${(cy + r * Math.sin(a)).toFixed(1)}`;
+  }).join(' ');
+
+// biology: a double helix with rungs
+const strand = (phase: number) =>
+  Array.from({ length: 121 }, (_, i) => {
+    const x = i * (W / 120);
+    const y = H / 2 + Math.sin(i / 8 + phase) * 44;
+    return `${i === 0 ? 'M' : 'L'}${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+const rungs = Array.from({ length: 41 }, (_, i) => {
+  const x = i * (W / 40);
+  const k = (x / (W / 120)) / 8;
+  return { x, y1: H / 2 + Math.sin(k) * 44, y2: H / 2 + Math.sin(k + Math.PI) * 44 };
+});
+---
+
+<div class="art-frame">
+  <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio={kind === 'physics' ? 'xMidYMax slice' : 'xMidYMid slice'} aria-hidden="true" focusable="false">
+    {
+      kind === 'physics' && (
+        <g fill="none" stroke="var(--c)">
+          <g stroke-opacity="0.12">
+            {Array.from({ length: 9 }, (_, i) => <line x1="0" x2={W} y1={20 + i * 16} y2={20 + i * 16} />)}
+            {Array.from({ length: 17 }, (_, i) => <line y1="0" y2={H} x1={20 + i * 40} x2={20 + i * 40} />)}
+          </g>
+          <line x1="20" x2={W - 20} y1="138" y2="138" stroke-opacity="0.5" />
+          {arcs.map((a) => (
+            <>
+              <path d={a.pts.map((p, i) => `${i ? 'L' : 'M'}${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ')} stroke-opacity={a.o} stroke-width="2" />
+              {a.pts.filter((_, i) => i % 4 === 0).map((p) => <circle cx={p[0]} cy={p[1]} r="3.4" fill="var(--c)" stroke="none" fill-opacity={a.o} />)}
+            </>
+          ))}
+        </g>
+      )
+    }
+    {
+      kind === 'chem' && (
+        <g fill="none" stroke="var(--c)" stroke-opacity="0.38" stroke-width="1.6">
+          {hexes.map((h) => <polygon points={hexPoints(h.cx, h.cy)} />)}
+          {hexes
+            .filter((_, i) => i % 9 === 0)
+            .map((h) => <circle cx={h.cx + r * Math.cos(Math.PI / 6)} cy={h.cy + r * Math.sin(Math.PI / 6)} r="5" fill="var(--c)" stroke="none" fill-opacity="0.85" />)}
+        </g>
+      )
+    }
+    {
+      kind === 'bio' && (
+        <g fill="none" stroke="var(--c)">
+          {rungs.map((r) => <line x1={r.x} x2={r.x} y1={r.y1} y2={r.y2} stroke-opacity="0.35" stroke-width="1.6" />)}
+          <path d={strand(0)} stroke-width="3" stroke-opacity="0.95" />
+          <path d={strand(Math.PI)} stroke-width="3" stroke-opacity="0.55" />
+        </g>
+      )
+    }
+  </svg>
+</div>

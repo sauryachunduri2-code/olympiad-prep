@@ -1,0 +1,59 @@
+---
+import Base from '../../../layouts/Base.astro';
+import '../../../styles/practice.css';
+import { COURSES, fmaTopics } from '../../../lib/courses';
+import { loadPapers, paperTitle } from '../../../lib/papers';
+import { rich, richInline } from '../../../lib/math';
+
+export function getStaticPaths() {
+  return fmaTopics().map((topic) => ({ params: { topic: topic.slug }, props: { topic } }));
+}
+
+const { topic } = Astro.props;
+const course = COURSES.fma;
+
+const byId = new Map<string, { title: string; q: any }>();
+for (const p of loadPapers().filter((p) => p.paper.competition_id === 'fma'))
+  for (const q of p.questions) byId.set(`${p.id}:${q.number}`, { title: paperTitle(p), q });
+
+const questions = topic.questions.map((tq) => {
+  const { title, q } = byId.get(tq.id)!;
+  const full = !!q.figure_ref?.endsWith('-full.png');
+  return {
+    id: tq.id,
+    label: `${title}, question ${q.number}`,
+    stem: full ? '' : rich(q.stem),
+    choices: q.choices ? q.choices.map(richInline) : null,
+    figure: q.figure_ref ? `/${q.figure_ref}` : null,
+    fullFigure: full,
+    answer: q.answer_index,
+    also: q.also_accepted,
+    solution: rich(q.solution),
+  };
+});
+const json = JSON.stringify({ course: 'fma', topic: { slug: topic.slug, name: topic.name }, questions }).replace(/</g, '\\u003c');
+---
+
+<Base
+  title={`${topic.name} practice: Olympiad Prep`}
+  current="fma"
+  crumbs={[{ label: 'Courses' }, { label: course.name, href: '/course/fma/' }, { label: topic.name }]}
+>
+  <div class="practice" data-practice style={`--c:${course.color}`}>
+    <header class="p-head">
+      <span class="kind">{course.name} practice</span>
+      <h1>{topic.name}</h1>
+    </header>
+
+    <div class="p-dots" data-dots aria-label="Questions in this session"></div>
+
+    <section class="panel q-panel" data-qpanel aria-live="polite"></section>
+
+    <section class="panel summary" data-summary hidden></section>
+  </div>
+
+  <script type="application/json" id="practice-data" set:html={json} />
+  <script>
+    import '../../../scripts/practice';
+  </script>
+</Base>
