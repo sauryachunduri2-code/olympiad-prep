@@ -1,0 +1,999 @@
+{
+  "paper": {
+    "competition_id": "usabo",
+    "year": 2017,
+    "round": "open",
+    "form": null,
+    "source_url": "https://www.usabo-trc.org/sites/default/files/allfiles/USABO%2017%20Open%20Exam.Final.web.pdf",
+    "key_url": "https://www.usabo-trc.org/sites/default/files/allfiles/USABO%2017%20OE%20Key.pdf",
+    "storage_policy": "tags_only",
+    "question_count": 50,
+    "time_limit_minutes": 50
+  },
+  "tagging": {
+    "tagged_on": "2026-10-27",
+    "tagged_by": "claude-code",
+    "stored": "topic tags, format, concept keywords, and shared-stem groups only",
+    "not_stored": "question text, answer choices, answers, and figures (CEE terms)",
+    "format_meaning": "recall = knowing a fact; reasoning = applying knowledge to a scenario; calc = a numeric answer; data = reading a figure, table, or graph",
+    "judgment": "topics and formats are the tagger's reading of each question, not CEE's classification",
+    "difficulty_band": null
+  },
+  "questions": [
+    {
+      "number": 1,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "biochemistry",
+          "weight": 1.0
+        },
+        {
+          "slug": "molecular-biology",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "DNA-binding proteins",
+        "amino acid properties"
+      ],
+      "group": null
+    },
+    {
+      "number": 2,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "immunology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "plasma cells",
+        "antibodies"
+      ],
+      "group": null
+    },
+    {
+      "number": 3,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "data",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "biochemistry",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "lipid structure"
+      ],
+      "group": null
+    },
+    {
+      "number": 4,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "cell-cycle-signaling",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "receptor affinity",
+        "Kd"
+      ],
+      "group": null
+    },
+    {
+      "number": 5,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "cell-cycle-signaling",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "receptor signaling",
+        "cell proliferation"
+      ],
+      "group": null
+    },
+    {
+      "number": 6,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "biochemistry",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "free energy",
+        "equilibrium"
+      ],
+      "group": null
+    },
+    {
+      "number": 7,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "membranes-transport",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "halophiles",
+        "osmoregulation"
+      ],
+      "group": null
+    },
+    {
+      "number": 8,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "immunology",
+          "weight": 1.0
+        },
+        {
+          "slug": "cell-structure",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "phagocytosis",
+        "reactive oxygen species"
+      ],
+      "group": null
+    },
+    {
+      "number": 9,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "molecular-biology",
+          "weight": 1.0
+        },
+        {
+          "slug": "immunology",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "HIV life cycle",
+        "retroviruses"
+      ],
+      "group": null
+    },
+    {
+      "number": 10,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "cell-cycle-signaling",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "tumorigenesis"
+      ],
+      "group": null
+    },
+    {
+      "number": 11,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "plant-physiology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "C3 vs C4 plants"
+      ],
+      "group": null
+    },
+    {
+      "number": 12,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "classification",
+          "weight": 1.0
+        },
+        {
+          "slug": "plant-anatomy",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "cellulose synthesis complexes",
+        "green algae lineage"
+      ],
+      "group": null
+    },
+    {
+      "number": 13,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "plant-anatomy",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "vascular plant anatomy"
+      ],
+      "group": null
+    },
+    {
+      "number": 14,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "plant-physiology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "soil chemistry",
+        "nutrient availability"
+      ],
+      "group": null
+    },
+    {
+      "number": 15,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "data",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "plant-physiology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "isotope labeling",
+        "photosynthesis"
+      ],
+      "group": null
+    },
+    {
+      "number": 16,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "membranes-transport",
+          "weight": 1.0
+        },
+        {
+          "slug": "plant-physiology",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "compartment pH",
+        "proton gradients"
+      ],
+      "group": null
+    },
+    {
+      "number": 17,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "plant-physiology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "water potential"
+      ],
+      "group": null
+    },
+    {
+      "number": 18,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "plant-anatomy",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "eudicot anatomy",
+        "secondary growth"
+      ],
+      "group": null
+    },
+    {
+      "number": 19,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "organ-systems",
+          "weight": 1.0
+        },
+        {
+          "slug": "classification",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "C. elegans body plan"
+      ],
+      "group": null
+    },
+    {
+      "number": 20,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "organ-systems",
+          "weight": 1.0
+        },
+        {
+          "slug": "cell-cycle-signaling",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "steroid hormones",
+        "receptor location"
+      ],
+      "group": null
+    },
+    {
+      "number": 21,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "organ-systems",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "catecholamine synthesis"
+      ],
+      "group": null
+    },
+    {
+      "number": 22,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "organ-systems",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "acid-base balance",
+        "ventilation"
+      ],
+      "group": null
+    },
+    {
+      "number": 23,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "development",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "germ layers"
+      ],
+      "group": null
+    },
+    {
+      "number": 24,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "data",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "organ-systems",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "circadian rhythm",
+        "melatonin"
+      ],
+      "group": null
+    },
+    {
+      "number": 25,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "organ-systems",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "thyroid regulation",
+        "Graves disease"
+      ],
+      "group": null
+    },
+    {
+      "number": 26,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "organ-systems",
+          "weight": 1.0
+        },
+        {
+          "slug": "cell-structure",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "sliding filament model"
+      ],
+      "group": null
+    },
+    {
+      "number": 27,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "organ-systems",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "Starling forces",
+        "edema"
+      ],
+      "group": null
+    },
+    {
+      "number": 28,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "organ-systems",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "nephron"
+      ],
+      "group": null
+    },
+    {
+      "number": 29,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "neurobiology",
+          "weight": 1.0
+        },
+        {
+          "slug": "development",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "embryonic brain regions"
+      ],
+      "group": null
+    },
+    {
+      "number": 30,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "organ-systems",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "GI physiology",
+        "pernicious anemia"
+      ],
+      "group": null
+    },
+    {
+      "number": 31,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "behavior",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "mimicry"
+      ],
+      "group": null
+    },
+    {
+      "number": 32,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "behavior",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "optimal foraging"
+      ],
+      "group": null
+    },
+    {
+      "number": 33,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "behavior",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "innate vs learned behavior",
+        "song learning"
+      ],
+      "group": null
+    },
+    {
+      "number": 34,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "data",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "development",
+          "weight": 1.0
+        },
+        {
+          "slug": "molecular-biology",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "bicoid",
+        "segmentation genes"
+      ],
+      "group": null
+    },
+    {
+      "number": 35,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "cell-cycle-signaling",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "pRb",
+        "DNA content"
+      ],
+      "group": null
+    },
+    {
+      "number": 36,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "calc",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "mendelian-genetics",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "gamete combinations",
+        "meiosis"
+      ],
+      "group": null
+    },
+    {
+      "number": 37,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "calc",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "molecular-biology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "DNA replication rate"
+      ],
+      "group": null
+    },
+    {
+      "number": 38,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "genomics",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "next-generation sequencing",
+        "read depth"
+      ],
+      "group": "q38-41"
+    },
+    {
+      "number": 39,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "genomics",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "barcodes",
+        "sequence reads"
+      ],
+      "group": "q38-41"
+    },
+    {
+      "number": 40,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "genomics",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "barcode errors"
+      ],
+      "group": "q38-41"
+    },
+    {
+      "number": 41,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "calc",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "genomics",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "sequencing yield"
+      ],
+      "group": "q38-41"
+    },
+    {
+      "number": 42,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "molecular-biology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "genetic code",
+        "negative-sense RNA"
+      ],
+      "group": null
+    },
+    {
+      "number": 43,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "mendelian-genetics",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "nondisjunction",
+        "meiosis"
+      ],
+      "group": null
+    },
+    {
+      "number": 44,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "populations-communities",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "diversity",
+        "selection"
+      ],
+      "group": null
+    },
+    {
+      "number": 45,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "populations-communities",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "habitats",
+        "marine zones"
+      ],
+      "group": null
+    },
+    {
+      "number": 46,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "ecosystems",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "biomes",
+        "chaparral"
+      ],
+      "group": null
+    },
+    {
+      "number": 47,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "calc",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "ecosystems",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "trophic energy transfer"
+      ],
+      "group": null
+    },
+    {
+      "number": 48,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "populations-communities",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "survivorship curves",
+        "r and K selection"
+      ],
+      "group": null
+    },
+    {
+      "number": 49,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "classification",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "mammalian orders"
+      ],
+      "group": null
+    },
+    {
+      "number": 50,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "evolution",
+          "weight": 1.0
+        },
+        {
+          "slug": "classification",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "phylogenetic relatedness"
+      ],
+      "group": null
+    }
+  ]
+}

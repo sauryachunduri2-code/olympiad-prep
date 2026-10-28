@@ -1,0 +1,978 @@
+{
+  "paper": {
+    "competition_id": "usabo",
+    "year": 2018,
+    "round": "open",
+    "form": null,
+    "source_url": "https://www.usabo-trc.org/sites/default/files/allfiles/USABO%2018%20Open%20Exam.Final%20wo%20ans.pdf",
+    "key_url": "https://www.usabo-trc.org/sites/default/files/allfiles/ctools/USABO%2018%20Open%20Exam.Final%20w.ans_0.pdf",
+    "storage_policy": "tags_only",
+    "question_count": 50,
+    "time_limit_minutes": 50
+  },
+  "tagging": {
+    "tagged_on": "2026-10-27",
+    "tagged_by": "claude-code",
+    "stored": "topic tags, format, concept keywords, and shared-stem groups only",
+    "not_stored": "question text, answer choices, answers, and figures (CEE terms)",
+    "format_meaning": "recall = knowing a fact; reasoning = applying knowledge to a scenario; calc = a numeric answer; data = reading a figure, table, or graph",
+    "judgment": "topics and formats are the tagger's reading of each question, not CEE's classification",
+    "difficulty_band": null
+  },
+  "questions": [
+    {
+      "number": 1,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "cell-structure",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "integrin binding",
+        "cytoskeleton"
+      ],
+      "group": "q1-2"
+    },
+    {
+      "number": 2,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "cell-structure",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "cytokinesis",
+        "myosin"
+      ],
+      "group": "q1-2"
+    },
+    {
+      "number": 3,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "calc",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "biochemistry",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "pKa and pH"
+      ],
+      "group": null
+    },
+    {
+      "number": 4,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "metabolism",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "oxidative phosphorylation"
+      ],
+      "group": null
+    },
+    {
+      "number": 5,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "molecular-biology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "history of DNA research"
+      ],
+      "group": null
+    },
+    {
+      "number": 6,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "biochemistry",
+          "weight": 1.0
+        },
+        {
+          "slug": "membranes-transport",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "transmembrane helices",
+        "amino acid properties"
+      ],
+      "group": null
+    },
+    {
+      "number": 7,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "metabolism",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "electron transport chain"
+      ],
+      "group": "q7-10"
+    },
+    {
+      "number": 8,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "metabolism",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "electron transport chain"
+      ],
+      "group": "q7-10"
+    },
+    {
+      "number": 9,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "metabolism",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "electron transport chain"
+      ],
+      "group": "q7-10"
+    },
+    {
+      "number": 10,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "metabolism",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "electron transport chain"
+      ],
+      "group": "q7-10"
+    },
+    {
+      "number": 11,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "data",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "plant-physiology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "ethylene signaling",
+        "mutant phenotypes"
+      ],
+      "group": null
+    },
+    {
+      "number": 12,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "plant-physiology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "ethylene signaling",
+        "hormone interactions"
+      ],
+      "group": null
+    },
+    {
+      "number": 13,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "molecular-biology",
+          "weight": 1.0
+        },
+        {
+          "slug": "evolution",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "regulatory mutations",
+        "mutation types"
+      ],
+      "group": null
+    },
+    {
+      "number": 14,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "molecular-biology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "gene regulation",
+        "microarrays"
+      ],
+      "group": null
+    },
+    {
+      "number": 15,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "plant-physiology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "haploid tissue culture",
+        "plant life cycle"
+      ],
+      "group": null
+    },
+    {
+      "number": 16,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "molecular-biology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "epigenetics",
+        "histone acetylation"
+      ],
+      "group": null
+    },
+    {
+      "number": 17,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "calc",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "metabolism",
+          "weight": 1.0
+        },
+        {
+          "slug": "plant-physiology",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "nitrogen fixation",
+        "stoichiometry"
+      ],
+      "group": null
+    },
+    {
+      "number": 18,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "plant-anatomy",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "secondary growth",
+        "tree trunk layers"
+      ],
+      "group": null
+    },
+    {
+      "number": 19,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "organ-systems",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "vitamin D",
+        "nutrition"
+      ],
+      "group": null
+    },
+    {
+      "number": 20,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "data",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "immunology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "antibody structure"
+      ],
+      "group": null
+    },
+    {
+      "number": 21,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "development",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "fertilization",
+        "sea urchin"
+      ],
+      "group": "q21-22"
+    },
+    {
+      "number": 22,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "development",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "IVF",
+        "embryo stages"
+      ],
+      "group": "q21-22"
+    },
+    {
+      "number": 23,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "neurobiology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "lateral line",
+        "mechanoreception"
+      ],
+      "group": null
+    },
+    {
+      "number": 24,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "immunology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "antigen presentation",
+        "T cell help"
+      ],
+      "group": null
+    },
+    {
+      "number": 25,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "organ-systems",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "vascular anatomy"
+      ],
+      "group": null
+    },
+    {
+      "number": 26,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "neurobiology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "thalamus",
+        "sensory pathways"
+      ],
+      "group": null
+    },
+    {
+      "number": 27,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "organ-systems",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "lipoproteins"
+      ],
+      "group": null
+    },
+    {
+      "number": 28,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "organ-systems",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "prolactin",
+        "pituitary regulation"
+      ],
+      "group": null
+    },
+    {
+      "number": 29,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "metabolism",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "Krebs cycle intermediates",
+        "amino acid synthesis"
+      ],
+      "group": null
+    },
+    {
+      "number": 30,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "biochemistry",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "alpha helix",
+        "amino acid properties"
+      ],
+      "group": null
+    },
+    {
+      "number": 31,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "behavior",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "proximate causes",
+        "social behavior"
+      ],
+      "group": null
+    },
+    {
+      "number": 32,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "behavior",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "mate choice",
+        "mate copying"
+      ],
+      "group": null
+    },
+    {
+      "number": 33,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "behavior",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "agonistic behavior"
+      ],
+      "group": null
+    },
+    {
+      "number": 34,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "biochemistry",
+          "weight": 1.0
+        },
+        {
+          "slug": "molecular-biology",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "amino acid substitutions"
+      ],
+      "group": null
+    },
+    {
+      "number": 35,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "mendelian-genetics",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "genomic imprinting"
+      ],
+      "group": null
+    },
+    {
+      "number": 36,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "calc",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "mendelian-genetics",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "carrier probability",
+        "autosomal recessive"
+      ],
+      "group": null
+    },
+    {
+      "number": 37,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "molecular-biology",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "operons",
+        "lac operon"
+      ],
+      "group": null
+    },
+    {
+      "number": 38,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "evolution",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "dN/dS",
+        "molecular selection"
+      ],
+      "group": null
+    },
+    {
+      "number": 39,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "data",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "evolution",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "tree topology"
+      ],
+      "group": null
+    },
+    {
+      "number": 40,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "mendelian-genetics",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "X-linked inheritance",
+        "experimental crosses"
+      ],
+      "group": null
+    },
+    {
+      "number": 41,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "immunology",
+          "weight": 1.0
+        },
+        {
+          "slug": "molecular-biology",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "epitopes",
+        "immune evasion"
+      ],
+      "group": null
+    },
+    {
+      "number": 42,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "evolution",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "exon shuffling"
+      ],
+      "group": null
+    },
+    {
+      "number": 43,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "calc",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "mendelian-genetics",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "three-point cross",
+        "gene mapping"
+      ],
+      "group": null
+    },
+    {
+      "number": 44,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "reasoning",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "populations-communities",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "population growth",
+        "logistic growth"
+      ],
+      "group": null
+    },
+    {
+      "number": 45,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "populations-communities",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "symbiosis",
+        "mutualism"
+      ],
+      "group": null
+    },
+    {
+      "number": 46,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "ecosystems",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "nutrient cycles"
+      ],
+      "group": null
+    },
+    {
+      "number": 47,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "population-genetics",
+          "weight": 1.0
+        },
+        {
+          "slug": "populations-communities",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "effective population size"
+      ],
+      "group": null
+    },
+    {
+      "number": 48,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "calc",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "ecosystems",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "ecological efficiencies"
+      ],
+      "group": null
+    },
+    {
+      "number": 49,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "classification",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "bacteria vs archaea"
+      ],
+      "group": null
+    },
+    {
+      "number": 50,
+      "stem": null,
+      "choices": null,
+      "answer_index": null,
+      "format": "recall",
+      "difficulty_band": null,
+      "topics": [
+        {
+          "slug": "classification",
+          "weight": 1.0
+        }
+      ],
+      "skills": [
+        "land plants vs green algae"
+      ],
+      "group": null
+    }
+  ]
+}

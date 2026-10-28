@@ -6,62 +6,136 @@
       "slug": "cell-biology",
       "name": "Cell biology",
       "subtopics": [
-        {"slug": "cell-structure", "name": "Cell structure and organelles"},
-        {"slug": "membranes-transport", "name": "Membranes and transport"},
-        {"slug": "metabolism", "name": "Metabolism and enzymes"},
-        {"slug": "molecular-biology", "name": "Molecular biology and gene expression"},
-        {"slug": "cell-cycle-signaling", "name": "Cell cycle and signaling"},
-        {"slug": "biochemistry", "name": "Biochemistry"}
+        {
+          "slug": "cell-structure",
+          "name": "Cell structure and organelles"
+        },
+        {
+          "slug": "membranes-transport",
+          "name": "Membranes and transport"
+        },
+        {
+          "slug": "metabolism",
+          "name": "Metabolism and enzymes"
+        },
+        {
+          "slug": "molecular-biology",
+          "name": "Molecular biology and gene expression"
+        },
+        {
+          "slug": "cell-cycle-signaling",
+          "name": "Cell cycle and signaling"
+        },
+        {
+          "slug": "biochemistry",
+          "name": "Biochemistry"
+        }
       ]
     },
     {
       "slug": "plant-biology",
       "name": "Plant anatomy and physiology",
       "subtopics": [
-        {"slug": "plant-anatomy", "name": "Plant anatomy"},
-        {"slug": "plant-physiology", "name": "Plant physiology and hormones"}
+        {
+          "slug": "plant-anatomy",
+          "name": "Plant anatomy"
+        },
+        {
+          "slug": "plant-physiology",
+          "name": "Plant physiology and hormones"
+        }
       ]
     },
     {
       "slug": "animal-biology",
       "name": "Animal anatomy and physiology",
       "subtopics": [
-        {"slug": "organ-systems", "name": "Organ systems"},
-        {"slug": "neurobiology", "name": "Nervous system and sensation"},
-        {"slug": "immunology", "name": "Immunology"},
-        {"slug": "development", "name": "Development"}
+        {
+          "slug": "organ-systems",
+          "name": "Organ systems"
+        },
+        {
+          "slug": "neurobiology",
+          "name": "Nervous system and sensation"
+        },
+        {
+          "slug": "immunology",
+          "name": "Immunology"
+        },
+        {
+          "slug": "development",
+          "name": "Development"
+        }
       ]
     },
     {
       "slug": "ethology",
       "name": "Ethology",
       "subtopics": [
-        {"slug": "behavior", "name": "Animal behavior"}
+        {
+          "slug": "behavior",
+          "name": "Animal behavior"
+        }
       ]
     },
     {
       "slug": "genetics-evolution",
       "name": "Genetics and evolution",
       "subtopics": [
-        {"slug": "mendelian-genetics", "name": "Mendelian genetics and pedigrees"},
-        {"slug": "population-genetics", "name": "Population genetics"},
-        {"slug": "evolution", "name": "Evolution and phylogenetics"},
-        {"slug": "genomics", "name": "Genomics and biotechnology"}
+        {
+          "slug": "mendelian-genetics",
+          "name": "Mendelian genetics and pedigrees"
+        },
+        {
+          "slug": "population-genetics",
+          "name": "Population genetics"
+        },
+        {
+          "slug": "evolution",
+          "name": "Evolution and phylogenetics"
+        },
+        {
+          "slug": "genomics",
+          "name": "Genomics and biotechnology"
+        }
       ]
     },
     {
       "slug": "ecology",
       "name": "Ecology",
       "subtopics": [
-        {"slug": "populations-communities", "name": "Populations and communities"},
-        {"slug": "ecosystems", "name": "Ecosystems and biogeochemical cycles"}
+        {
+          "slug": "populations-communities",
+          "name": "Populations and communities"
+        },
+        {
+          "slug": "ecosystems",
+          "name": "Ecosystems and biogeochemical cycles"
+        }
       ]
     },
     {
       "slug": "biosystematics",
       "name": "Biosystematics",
       "subtopics": [
-        {"slug": "classification", "name": "Classification and diversity of life"}
+        {
+          "slug": "classification",
+          "name": "Classification and diversity of life"
+        }
+      ]
+    },
+    {
+      "slug": "methods",
+      "name": "Methods and experimental design",
+      "subtopics": [
+        {
+          "slug": "experimental-design",
+          "name": "Experimental design and controls"
+        },
+        {
+          "slug": "lab-techniques",
+          "name": "Lab techniques and microscopy"
+        }
       ]
     }
   ]

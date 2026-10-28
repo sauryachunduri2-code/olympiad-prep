@@ -1,0 +1,182 @@
+---
+import Base from '../../layouts/Base.astro';
+import { biologyTopics, loadTaggedPapers } from '../../lib/papers';
+
+const papers = loadTaggedPapers().filter((p) => p.paper.competition_id === 'usabo');
+const total = papers.reduce((n, p) => n + p.questions.length, 0);
+const years = papers.map((p) => p.paper.year);
+
+type Entry = { year: number; n: number; url: string; format: string; skills: string[]; partial: boolean; group: string | null };
+const entries = new Map<string, Entry[]>();
+for (const p of papers) {
+  for (const q of p.questions) {
+    for (const t of q.topics) {
+      const list = entries.get(t.slug) ?? [];
+      list.push({
+        year: p.paper.year,
+        n: q.number,
+        url: p.paper.source_url,
+        format: q.format,
+        skills: q.skills,
+        partial: t.weight < 1,
+        group: q.group,
+      });
+      entries.set(t.slug, list);
+    }
+  }
+}
+for (const list of entries.values()) list.sort((a, b) => b.year - a.year || a.n - b.n);
+
+const groupText = (g: string) => {
+  const [a, b] = g.slice(1).split('-').map(Number);
+  return b === a + 1 ? `${a} and ${b}` : `${a} to ${b}`;
+};
+const topics = biologyTopics();
+---
+
+<Base title="USABO questions by topic: Olympiad Prep" current="hub" description="Find USABO Open Exam questions by topic, linked to the official exams.">
+  <div class="wrap">
+    <p class="crumb"><a href="/hub/#biology">Hub</a> / Biology</p>
+    <h1>USABO questions by topic</h1>
+    <p class="lede">
+      {total} questions from the Open Exams of {Math.min(...years)} to {Math.max(...years)}, sorted by what they test.
+    </p>
+    <p>
+      The questions belong to CEE, so none of their text is copied here. Each entry names a question and links
+      to CEE's own exam PDF. Open it and go to the question number. Topics and formats are our reading of each
+      question, not CEE's labels.
+    </p>
+    <p class="key">
+      Formats: <b>recall</b> is knowing a fact, <b>reasoning</b> is applying it to a scenario, <b>calc</b> has a
+      numeric answer, and <b>data</b> means reading a figure, table, or graph. Entries marked "partly" touch the topic
+      without being mainly about it.
+    </p>
+    <p class="years">
+      Answer keys:{' '}
+      {
+        papers.map((p, i) => (
+          <>
+            <a href={p.paper.key_url}>{p.paper.year}</a>
+            {i < papers.length - 1 ? ', ' : '.'}
+          </>
+        ))
+      }
+    </p>
+
+    {
+      topics.map((area) => (
+        <section class="area">
+          <h2>{area.name}</h2>
+          {area.subtopics
+            .filter((s) => entries.has(s.slug))
+            .map((s) => {
+              const list = entries.get(s.slug)!;
+              return (
+                <div class="sub">
+                  <h3>
+                    {s.name}
+                    <span class="count">{list.length}</span>
+                  </h3>
+                  <ul>
+                    {list.map((e) => (
+                      <li class={e.partial ? 'partial' : ''}>
+                        <a href={e.url} aria-label={`USABO Open ${e.year}, question ${e.n}, exam PDF`}>
+                          {e.year} Q{e.n}
+                        </a>
+                        <span class="fmt">{e.format}</span>
+                        <span class="what">
+                          {e.skills.join(', ')}
+                          {e.partial && ', partly'}
+                          {e.group && `, shares a stem with questions ${groupText(e.group)}`}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+        </section>
+      ))
+    }
+  </div>
+</Base>
+
+<style>
+  .crumb {
+    margin-top: clamp(28px, 5vw, 56px);
+    font: 560 var(--step--1) / 1.3 var(--sans);
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .lede {
+    font-size: var(--step-1);
+    color: var(--ink-soft);
+    margin: 12px 0 20px;
+  }
+  .key,
+  .years {
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+  }
+  .area {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .sub {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 8fr);
+    gap: clamp(16px, 4vw, 56px);
+    padding-block: 18px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sub h3 {
+    font-size: 1.05rem;
+  }
+  .count {
+    margin-left: 10px;
+    font: 500 var(--step--1) / 1 var(--sans);
+    color: var(--ink-soft);
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+  }
+  li {
+    display: grid;
+    grid-template-columns: 5.5rem 5.5rem 1fr;
+    gap: 12px;
+    align-items: baseline;
+    font-size: var(--step--1);
+  }
+  li > a {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .fmt {
+    font-family: var(--sans);
+    color: var(--ink-soft);
+  }
+  .what {
+    color: var(--ink);
+  }
+  .partial .what {
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 760px) {
+    .sub {
+      grid-template-columns: 1fr;
+    }
+    li {
+      grid-template-columns: 5rem 1fr;
+    }
+    .what {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

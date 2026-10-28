@@ -1,6 +1,8 @@
 # Data
 
 - `exams/`: one JSON file per paper, named `<competition>-<year>-<round>[-<form>].json`. `figures/<paper>/` holds the crops those files point to.
+- `links/`: links to the publisher's own copies of exams (USABO), so the site can point to them without storing them.
+- `cutoffs/`: past cutoff scores.
 - `taxonomy/`: topic and subtopic slugs per discipline. Every question's `topics` must use a slug from here.
 - `sources/`: chunked OpenStax text and the reading map (empty until P0 reaches it).
 - `raw/`: downloaded PDFs, one folder per paper. Git-ignored on purpose.
@@ -19,3 +21,7 @@ Stems are transcribed verbatim, typos included. Solutions are short summaries in
 2. Every numeric answer is re-derived independently.
 3. Every plain-English word in a stem or choice appears in the exam PDF.
 4. Every figure crop is looked at once.
+
+## Tags-only papers
+
+USABO files (`usabo-<year>-open.json`) follow the same shape but `storage_policy` is `tags_only`: `stem`, `choices`, and `answer_index` are null and there are no figures. Each question has `topics`, a `format` of recall, reasoning, calc, or data, short concept keywords in `skills`, and a `group` when several questions share a stem. These are the tagger's judgments, not CEE's labels. `difficulty_band` is null because USABO orders questions by subject, not difficulty.
