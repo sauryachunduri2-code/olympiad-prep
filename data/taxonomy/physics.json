@@ -1,0 +1,59 @@
+{
+  "discipline": "physics",
+  "topics": [
+    {
+      "slug": "mechanics",
+      "name": "Mechanics",
+      "subtopics": [
+        {
+          "slug": "kinematics",
+          "name": "Kinematics"
+        },
+        {
+          "slug": "forces",
+          "name": "Forces and Newton's laws"
+        },
+        {
+          "slug": "springs",
+          "name": "Springs and Hooke's law"
+        },
+        {
+          "slug": "statics",
+          "name": "Statics"
+        },
+        {
+          "slug": "circular-motion",
+          "name": "Circular motion"
+        },
+        {
+          "slug": "work-energy",
+          "name": "Work and energy"
+        },
+        {
+          "slug": "momentum-collisions",
+          "name": "Momentum and collisions"
+        },
+        {
+          "slug": "rotation",
+          "name": "Rotational motion"
+        },
+        {
+          "slug": "oscillations",
+          "name": "Oscillations"
+        },
+        {
+          "slug": "gravitation",
+          "name": "Gravitation and orbits"
+        },
+        {
+          "slug": "fluids",
+          "name": "Fluids"
+        },
+        {
+          "slug": "dimensional-analysis",
+          "name": "Dimensional analysis and scaling"
+        }
+      ]
+    }
+  ]
+}

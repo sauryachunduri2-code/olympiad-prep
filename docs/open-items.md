@@ -6,4 +6,4 @@
 4. **Free-tier pause policy.** Confirm the host's current rules for pausing idle free databases before launch.
 5. **USABO coverage.** Missing from the supplied material: 2019, 2022 to 2026, and some answer keys.
 6. **Skills requested but not installed.** product-manager, information-architecture, rag-pipeline-planning, few-shot-evaluation, and schema-design were not in the marketplace. GitHub candidates must have over 10,000 stars before installing.
-7. **Owner's writing rules.** The rules on AI-generated filler were not found in saved memory or CLAUDE.md and are still needed.
+7. **Reuse terms for F=ma and USNCO.** AAPT's exams page says only that past exams are available for practice, and each PDF is marked "Copyright AAPT". ACS publishes its exams for practice but the terms were not read in full. The repo is private for now. Get permission or read the terms before making it public.

@@ -1,0 +1,721 @@
+{
+  "paper": {
+    "competition_id": "fma",
+    "year": 2024,
+    "round": "fma",
+    "form": null,
+    "source_url": "https://aapt.org/physicsteam/upload/2024_F-ma_Exam.pdf",
+    "solutions_url": "https://aapt.org/physicsteam/upload/F-ma-2024-Solutions_v2.pdf",
+    "storage_policy": "full",
+    "question_count": 25,
+    "time_limit_minutes": 75,
+    "points_per_question": 1,
+    "constants": "g = 10 N/kg unless otherwise specified"
+  },
+  "tagging": {
+    "tagged_on": "2026-10-27",
+    "tagged_by": "claude-code",
+    "key_source": "red bold letters in the official solutions PDF, read by pipeline/extract_fma_key.py",
+    "key_checked_against_official_solutions": true,
+    "difficulty_basis": "position in paper: Q1-5 = 1, Q6-10 = 2, Q11-15 = 3, Q16-20 = 4, Q21-25 = 5",
+    "transcription": "verbatim from the exam PDF, including its typos (Q11 'a airtight', Q13 'relased')"
+  },
+  "questions": [
+    {
+      "number": 1,
+      "stem": "An archer fires an arrow from the ground so that it passes through two hoops, which are both a height $h$ above the ground. The arrow passes through the first hoop one second after the arrow is launched, and through the second hoop another second later. What is the value of $h$?",
+      "choices": [
+        "5 m",
+        "10 m",
+        "12 m",
+        "15 m",
+        "There is not enough information to decide."
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "solution": "The arrow is at height $h$ at $t = 1$ s and $t = 2$ s, so the apex is at $t = 1.5$ s and $v_0 = 15$ m/s. Then $h = 15(1) - 5(1)^2 = 10$ m.",
+      "figure_ref": null,
+      "format": "calc",
+      "difficulty_band": 1,
+      "topics": [
+        {
+          "slug": "kinematics",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "projectile symmetry"
+      ]
+    },
+    {
+      "number": 2,
+      "stem": "An amusement park ride consists of a circular, horizontal room. A rider leans against its frictionless outer walls, which are angled back at $30^\\circ$ with respect to the vertical, so that the rider's center of mass is 5.0 m from the center of the room. When the room begins to spin about its center, at what angular velocity will the rider's feet first lift off the floor?",
+      "choices": [
+        "1.9 rad/s",
+        "2.3 rad/s",
+        "3.5 rad/s",
+        "4.0 rad/s",
+        "5.6 rad/s"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "solution": "At lift-off only the wall pushes on the rider. Its vertical component balances $mg$ and its horizontal component supplies $m\\omega^2 R$, so $\\tan 30^\\circ = g/(\\omega^2 R)$ and $\\omega = 1.86$ rad/s.",
+      "figure_ref": null,
+      "format": "calc",
+      "difficulty_band": 1,
+      "topics": [
+        {
+          "slug": "circular-motion",
+          "weight": 1
+        },
+        {
+          "slug": "forces",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "banked-surface force balance"
+      ]
+    },
+    {
+      "number": 3,
+      "stem": "A simple bridge is made of five thin rods rigidly connected at four vertices. The ground is frictionless, so that it can only exert vertical normal forces at $B$ and $D$. The weight of the bridge is negligible, but a person stands at its middle, exerting a downward force $F$ at vertex $C$. In static equilibrium, each rod can be experiencing either tension or compression. Which of the following is true?",
+      "choices": [
+        "Only the vertical rod is in tension.",
+        "Only the horizontal rods are in tension.",
+        "Both the vertical rod and the diagonal rods are in tension.",
+        "Both the vertical rod and the horizontal rods are in tension.",
+        "All of the rods are in tension."
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "solution": "At $C$ the load needs an upward pull, so the vertical rod is in tension. At $A$ that rod pulls down, so the diagonals push up (compression). At $B$ and $D$ the diagonals push outward, so the horizontal rods pull back (tension).",
+      "figure_ref": "figures/fma-2024/q03-diagram.png",
+      "format": "concept",
+      "difficulty_band": 1,
+      "topics": [
+        {
+          "slug": "statics",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "truss joint analysis"
+      ]
+    },
+    {
+      "number": 4,
+      "stem": "A bouncy ball is thrown vertically upward from the ground. Air resistance is negligible, and the ball's collisions with the ground are perfectly elastic. Which of the following shows the kinetic energy of the ball as a function of time? Assume the collisions are too quick for their duration to be seen in the plot.",
+      "choices": null,
+      "answer_index": 3,
+      "answer_letter": "D",
+      "solution": "$K \\propto (v_0 - gt)^2$: an upward-opening parabola that reaches zero at the apex. Elastic bounces keep the speed, so $K$ is continuous at the ground.",
+      "figure_ref": "figures/fma-2024/q04-full.png",
+      "format": "graph",
+      "difficulty_band": 1,
+      "topics": [
+        {
+          "slug": "kinematics",
+          "weight": 1
+        },
+        {
+          "slug": "work-energy",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "reading graphs",
+        "energy vs time"
+      ]
+    },
+    {
+      "number": 5,
+      "stem": "A massless inclined plane with angle $30^\\circ$ to the horizontal is fixed to a scale. A block of mass $m$ is released from the top of the plane, which is frictionless. As the block slides down the plane, what is the reading on the scale?",
+      "choices": [
+        "$\\sqrt{3}\\,mg/4$",
+        "$mg/2$",
+        "$3mg/4$",
+        "$\\sqrt{3}\\,mg/2$",
+        "$mg$"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "solution": "The scale reads the vertical component of the block's normal force on the plane. $N = mg\\cos\\theta$, and its vertical part is $N\\cos\\theta = mg\\cos^2 30^\\circ = 3mg/4$.",
+      "figure_ref": "figures/fma-2024/q05-diagram.png",
+      "format": "calc",
+      "difficulty_band": 1,
+      "topics": [
+        {
+          "slug": "forces",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "normal force on an incline",
+        "system vs component"
+      ]
+    },
+    {
+      "number": 6,
+      "stem": "A pendulum is made with a string and a bucket full of water. When the string is vertical, the bottom of the bucket is near the ground. Then, the pendulum is set swinging with a small amplitude, and a very small hole is opened at the bottom of the bucket, which leaks water at a constant rate. After a few full swings, which of the following best shows the amount of water that has landed on the ground as a function of position?",
+      "choices": null,
+      "answer_index": 2,
+      "answer_letter": "C",
+      "solution": "Water lands in proportion to the time the bucket spends at each position, which is inversely proportional to its speed. Least at the center (fastest), most at the turning points.",
+      "figure_ref": "figures/fma-2024/q06-full.png",
+      "format": "graph",
+      "difficulty_band": 2,
+      "topics": [
+        {
+          "slug": "oscillations",
+          "weight": 1
+        },
+        {
+          "slug": "kinematics",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "time-at-position distribution"
+      ]
+    },
+    {
+      "number": 7,
+      "stem": "A particle travels in a straight line. Its velocity as a function of time is shown below. Which of the following shows the velocity as a function of distance $x$ from its initial position?",
+      "choices": null,
+      "answer_index": 2,
+      "answer_letter": "C",
+      "solution": "Uniform acceleration gives $v \\propto \\sqrt{x}$ (steep, then flattening). Then constant $v$. The motion is time-symmetric, so the slowing phase mirrors the speeding-up phase.",
+      "figure_ref": "figures/fma-2024/q07-full.png",
+      "format": "graph",
+      "difficulty_band": 2,
+      "topics": [
+        {
+          "slug": "kinematics",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "transforming graphs",
+        "v vs x from v vs t"
+      ]
+    },
+    {
+      "number": 8,
+      "stem": "A rod of length $L$ is sliding down a frictionless wall. When the rod makes an angle of $45^\\circ$ to the horizontal, the bottom of the rod has speed $v$. At this moment, what is the speed of the middle of the rod?",
+      "choices": [
+        "$v/2$",
+        "$v/\\sqrt{2}$",
+        "$v$",
+        "$\\sqrt{2}\\,v$",
+        "$2v$"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "solution": "At $45^\\circ$ the top moves down at $v$ while the bottom moves sideways at $v$. The midpoint's velocity is the average of those two perpendicular velocities, so its speed is $v/\\sqrt{2}$.",
+      "figure_ref": "figures/fma-2024/q08-diagram.png",
+      "format": "calc",
+      "difficulty_band": 2,
+      "topics": [
+        {
+          "slug": "kinematics",
+          "weight": 1
+        },
+        {
+          "slug": "rotation",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "constraint kinematics",
+        "rigid-body velocities"
+      ]
+    },
+    {
+      "number": 9,
+      "stem": "When a car's brakes are fully engaged, it takes 100 m to stop on a dry road, which has coefficient of kinetic friction $\\mu_k = 0.8$ with the tires. Now suppose only the first 50 m of the road is dry, and the rest is covered with ice, with $\\mu_k = 0.2$. What total distance does the car need to stop?",
+      "choices": [
+        "150 m",
+        "200 m",
+        "250 m",
+        "400 m",
+        "850 m"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "solution": "Dry stop: $v^2/2 = \\mu_d g x$ with $x = 100$ m. The first 50 m removes half that energy; the ice removes the rest: $\\mu_i g y = \\mu_d g x/2$, so $y = 200$ m and the total is 250 m.",
+      "figure_ref": null,
+      "format": "calc",
+      "difficulty_band": 2,
+      "topics": [
+        {
+          "slug": "work-energy",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "work done by friction"
+      ]
+    },
+    {
+      "number": 10,
+      "stem": "A block of mass $m$ is connected to the walls of a frictionless box by two massless springs with relaxed lengths $\\ell$ and $2\\ell$, and spring constants $k$ and $2k$ respectively. The length of the box is $3\\ell$. The system rotates with a constant angular velocity $\\omega$ about one of its walls. Suppose the block stays at a constant distance $r$ from the axis of rotation, without touching either of the walls. What is the value of $r$?",
+      "choices": [
+        "$\\dfrac{2k\\ell}{2k - m\\omega^2}$",
+        "$\\dfrac{2k\\ell}{2k + m\\omega^2}$",
+        "$\\dfrac{2k\\ell}{3k + m\\omega^2}$",
+        "$\\dfrac{3k\\ell}{3k - m\\omega^2}$",
+        "$\\dfrac{3k\\ell}{3k + m\\omega^2}$"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "solution": "In the rotating frame both springs pull the block toward the axis, each with force proportional to $r - \\ell$: $m\\omega^2 r = k(r - \\ell) + 2k(r - \\ell)$. Solve for $r$.",
+      "figure_ref": "figures/fma-2024/q10-diagram.png",
+      "format": "calc",
+      "difficulty_band": 2,
+      "topics": [
+        {
+          "slug": "circular-motion",
+          "weight": 1
+        },
+        {
+          "slug": "springs",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "rotating frame",
+        "spring equilibrium"
+      ]
+    },
+    {
+      "number": 11,
+      "stem": "Two hemispherical shells can be pressed together to form a airtight sphere of radius 40 cm. Suppose the shells are pressed together at a high altitude, where the air pressure is half its value at sea level. The sphere is then returned to sea level, where the air pressure is $10^5$ Pa. What force $F$, applied directly outward to each hemisphere, is required to pull them apart?",
+      "choices": [
+        "25,000 N",
+        "50,000 N",
+        "100,000 N",
+        "200,000 N",
+        "400,000 N"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "solution": "The net inward pressure on each hemisphere is $\\Delta P = 0.5 \\times 10^5$ Pa over the projected area $\\pi r^2$: $F = \\pi (0.4)^2 (5 \\times 10^4) \\approx 2.5 \\times 10^4$ N.",
+      "figure_ref": null,
+      "format": "calc",
+      "difficulty_band": 3,
+      "topics": [
+        {
+          "slug": "fluids",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "pressure on a projected area"
+      ]
+    },
+    {
+      "number": 12,
+      "stem": "A space probe with mass $m$ at point $P$ traverses through a cluster of three asteroids, at points $A$, $B$, and $C$. The masses and locations of the asteroids are shown below. What is the torque on the probe about point $C$?",
+      "choices": [
+        "$\\dfrac{1}{2\\sqrt{2}}\\dfrac{GMm}{d}$",
+        "$\\dfrac{1}{2}\\dfrac{GMm}{d}$",
+        "$\\dfrac{1}{\\sqrt{2}}\\dfrac{GMm}{d}$",
+        "$\\dfrac{GMm}{d}$",
+        "$\\sqrt{2}\\,\\dfrac{GMm}{d}$"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "solution": "$C$'s own pull has no torque about $C$. Only the horizontal components of the pulls from $A$ and $B$ have lever arm $d$: $B$ gives $GMm/(\\sqrt{2}\\,d^2)$, $A$ gives $GMm/(2\\sqrt{2}\\,d^2)$ the other way. Net torque $= GMm/(2\\sqrt{2}\\,d)$.",
+      "figure_ref": "figures/fma-2024/q12-diagram.png",
+      "format": "calc",
+      "difficulty_band": 3,
+      "topics": [
+        {
+          "slug": "gravitation",
+          "weight": 1
+        },
+        {
+          "slug": "rotation",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "torque from point-mass attraction",
+        "vector components"
+      ]
+    },
+    {
+      "number": 13,
+      "stem": "Two frictionless blocks of mass $m$ are connected by a massless string which passes through a fixed massless pulley, which is a height $h$ above the ground. Suppose the blocks are initially held with horizontal separation $x$, and the length of the string is chosen so that the right block hangs in the air as shown. If the blocks are relased, the tension in the string immediately afterward will be $T$. Which of the following shows a plot of $T$ versus $x$?",
+      "choices": null,
+      "answer_index": 1,
+      "answer_letter": "B",
+      "solution": "Limiting cases: at $x = 0$ it is a static Atwood machine, $T = mg$. As $x \\to \\infty$ the string is horizontal and both blocks accelerate equally, $T = mg/2$. Only (B) fits both. In general $T = mg\\,(h^2 + x^2)/(h^2 + 2x^2)$.",
+      "figure_ref": "figures/fma-2024/q13-full.png",
+      "format": "graph",
+      "difficulty_band": 3,
+      "topics": [
+        {
+          "slug": "forces",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "limiting cases",
+        "pulley constraint"
+      ]
+    },
+    {
+      "number": 14,
+      "stem": "A bead of mass $m$ can slide frictionlessly on a vertical circular wire hoop of radius 20 cm. The hoop is attached to a stand of mass $m$, which can slide frictionlessly on the ground. Initially, the bead is at the bottom of the hoop, the stand is at rest, and the bead has velocity 2 m/s to the right. At some point, the bead will stop moving with respect to the hoop. At that moment, through what angle along the hoop has the bead traveled?",
+      "choices": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$90^\\circ$",
+        "$120^\\circ$"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "solution": "When the bead is at rest relative to the hoop, both move at the same velocity. Horizontal momentum gives $1$ m/s. Energy: $\\tfrac{1}{2}m(2)^2 = \\tfrac{1}{2}(2m)(1)^2 + mg\\Delta h$, so $\\Delta h = 0.1$ m $= R/2$, which is $60^\\circ$ around the hoop.",
+      "figure_ref": "figures/fma-2024/q14-diagram.png",
+      "format": "calc",
+      "difficulty_band": 3,
+      "topics": [
+        {
+          "slug": "momentum-collisions",
+          "weight": 1
+        },
+        {
+          "slug": "work-energy",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "common-velocity condition",
+        "momentum plus energy"
+      ]
+    },
+    {
+      "number": 15,
+      "stem": "The viscous force between two plates of area $A$, with relative speed $v$ and separation $d$, is $F = \\eta A v/d$, where $\\eta$ is the viscosity. In fluid mechanics, the Ohnesorge number is a dimensionless number proportional to $\\eta$ which characterizes the importance of viscous forces, in a drop of fluid of density $\\rho$, surface tension $\\gamma$, and length scale $\\ell$. Which of the following could be the definition of the Ohnesorge number?",
+      "choices": [
+        "$\\dfrac{\\eta\\ell}{\\sqrt{\\rho\\gamma}}$",
+        "$\\eta\\ell\\sqrt{\\dfrac{\\rho}{\\gamma}}$",
+        "$\\eta\\sqrt{\\dfrac{\\rho}{\\gamma\\ell}}$",
+        "$\\eta\\sqrt{\\dfrac{\\rho\\ell}{\\gamma}}$",
+        "$\\dfrac{\\eta}{\\sqrt{\\rho\\gamma\\ell}}$"
+      ],
+      "answer_index": 4,
+      "answer_letter": "E",
+      "solution": "Units: $\\eta$ is kg/(m s), $\\rho$ is kg/m$^3$, $\\gamma$ is kg/s$^2$, $\\ell$ is m. $\\sqrt{\\rho\\gamma\\ell}$ has units kg/(m s), so only $\\eta/\\sqrt{\\rho\\gamma\\ell}$ is dimensionless.",
+      "figure_ref": null,
+      "format": "concept",
+      "difficulty_band": 3,
+      "topics": [
+        {
+          "slug": "dimensional-analysis",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "units of viscosity and surface tension"
+      ]
+    },
+    {
+      "number": 16,
+      "stem": "A child of mass $m$ holds onto the end of a massless rope of length $\\ell$, which is attached to a pivot a height $H$ above the ground. The child is released from rest when the rope is straight and horizontal. At some point, the child lets go of the rope, flies through the air, and lands on the ground a horizontal distance $d$ from the pivot. On Earth, the maximum possible value of $d$ is $d_E$. If the setup is moved to the Moon, which has 1/6 the gravitational acceleration, what is the new maximum possible value of $d$?",
+      "choices": [
+        "$d_E/6$",
+        "$d_E/\\sqrt{6}$",
+        "$d_E$",
+        "$\\sqrt{6}\\,d_E$",
+        "$6\\,d_E$"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "solution": "$d$ can only depend on $\\ell$, $H$, $m$ and $g$. Only $g$ contains seconds, and $d$ does not, so $d$ cannot depend on $g$.",
+      "figure_ref": "figures/fma-2024/q16-diagram.png",
+      "format": "concept",
+      "difficulty_band": 4,
+      "topics": [
+        {
+          "slug": "dimensional-analysis",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "which variables can appear"
+      ]
+    },
+    {
+      "number": 17,
+      "stem": "Consider the following system of massless and frictionless pulleys, ropes, and springs. Initially, a block of mass $m$ is attached to the end of a rope, and the system is in equilibrium. Next the block is doubled in mass, and the system is allowed to come to equilibrium again. During the transition between these equilibria, how far does the end of the rope (where the block is suspended) move?",
+      "choices": [
+        "$\\dfrac{7}{12}\\dfrac{mg}{k}$",
+        "$\\dfrac{11}{12}\\dfrac{mg}{k}$",
+        "$\\dfrac{13}{12}\\dfrac{mg}{k}$",
+        "$\\dfrac{7}{6}\\dfrac{mg}{k}$",
+        "$\\dfrac{11}{6}\\dfrac{mg}{k}$"
+      ],
+      "answer_index": 4,
+      "answer_letter": "E",
+      "solution": "The bottom rope's tension rises by $mg$, stretching the $3k$ spring by $mg/3k$. The lower pulley pulls down $2mg$ more, so the top rope's tension also rises by $mg$, stretching the $k$ and $2k$ springs by $mg/k$ and $mg/2k$. The rope end moves by the sum, $11mg/6k$.",
+      "figure_ref": "figures/fma-2024/q17-diagram.png",
+      "format": "calc",
+      "difficulty_band": 4,
+      "topics": [
+        {
+          "slug": "springs",
+          "weight": 1
+        },
+        {
+          "slug": "statics",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "springs in series",
+        "pulley force bookkeeping"
+      ]
+    },
+    {
+      "number": 18,
+      "stem": "A satellite is initially in a circular orbit of radius $R$ around a planet of mass $M$. It fires its rockets to instantaneously increase its speed by $\\Delta v$, keeping the direction of its velocity the same, so that it enters an elliptical orbit whose maximum distance from the planet is $2R$. What is the value of $\\Delta v$? (Hint: when the satellite is in an elliptical orbit with semimajor axis $a$, its total energy per unit mass is $-GM/2a$.)",
+      "choices": [
+        "$0.08\\sqrt{GM/R}$",
+        "$0.15\\sqrt{GM/R}$",
+        "$0.22\\sqrt{GM/R}$",
+        "$0.29\\sqrt{GM/R}$",
+        "$0.41\\sqrt{GM/R}$"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "solution": "Circular speed is $\\sqrt{GM/R}$. The ellipse has $a = 3R/2$, so $-GM/3R = -GM/R + \\tfrac{1}{2}v_f^2$, giving $v_f^2 = \\tfrac{4}{3}GM/R$. Then $\\Delta v = (1.155 - 1)\\sqrt{GM/R} \\approx 0.15\\sqrt{GM/R}$.",
+      "figure_ref": "figures/fma-2024/q18-diagram.png",
+      "format": "calc",
+      "difficulty_band": 4,
+      "topics": [
+        {
+          "slug": "gravitation",
+          "weight": 1
+        },
+        {
+          "slug": "work-energy",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "orbital energy",
+        "perigee burn"
+      ]
+    },
+    {
+      "number": 19,
+      "stem": "A wheel of radius $R$ has a thin rim and four spokes, each of which have uniform density. The entire rim has mass $m$, three of the spokes each have mass $m$, and the fourth spoke has mass $3m$. The wheel is suspended on a horizontal frictionless axle passing through its center. If the wheel is slightly rotated from its equilibrium position, what is the angular frequency of small oscillations?",
+      "choices": [
+        "$\\sqrt{g/3R}$",
+        "$\\sqrt{g/2R}$",
+        "$\\sqrt{2g/3R}$",
+        "$\\sqrt{g/R}$",
+        "$\\sqrt{7g/6R}$"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "solution": "Physical pendulum. $I = mR^2 + \\tfrac{1}{3}(6m)R^2 = 3mR^2$. The restoring torque comes from the heavy spoke against its opposite spoke: $(3m - m)g(R/2)\\theta = mgR\\theta$. So $\\omega^2 = mgR/(3mR^2) = g/3R$.",
+      "figure_ref": "figures/fma-2024/q19-diagram.png",
+      "format": "calc",
+      "difficulty_band": 4,
+      "topics": [
+        {
+          "slug": "rotation",
+          "weight": 1
+        },
+        {
+          "slug": "oscillations",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "physical pendulum",
+        "moment of inertia of spokes"
+      ]
+    },
+    {
+      "number": 20,
+      "stem": "Four massless rigid rods are connected into a quadrilateral by four hinges. The hinges have mass $m$, and allow the rods to freely rotate. A spring of spring constant $k$ is connected across each of the diagonals, so that the springs are at their relaxed length when the rods form a square. Assume the springs do not interfere with each other. If the square is slightly compressed along one of its diagonals, its shape will oscillate over time. What is the period of these oscillations?",
+      "choices": [
+        "$2\\pi\\sqrt{m/4k}$",
+        "$2\\pi\\sqrt{m/2k}$",
+        "$2\\pi\\sqrt{m/k}$",
+        "$2\\pi\\sqrt{2m/k}$",
+        "$2\\pi\\sqrt{4m/k}$"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "solution": "By symmetry every hinge moves $x$ at speed $v$, so $K = \\tfrac{1}{2}(4m)v^2$. Each spring changes length by $2x$, so $U = \\tfrac{1}{2}(8k)x^2$. That is $m_{\\text{eff}} = 4m$ on $k_{\\text{eff}} = 8k$, so $\\omega = \\sqrt{2k/m}$.",
+      "figure_ref": "figures/fma-2024/q20-diagram.png",
+      "format": "calc",
+      "difficulty_band": 4,
+      "topics": [
+        {
+          "slug": "oscillations",
+          "weight": 1
+        },
+        {
+          "slug": "springs",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "energy method for a coupled system"
+      ]
+    },
+    {
+      "number": 21,
+      "stem": "A syringe is filled with water of density $\\rho$ and negligible viscosity. Its body is a cylinder of cross-sectional area $A_1$, which gradually tapers into a needle with cross-sectional area $A_2 \\ll A_1$. The syringe is held in place and its end is slowly pushed inward by a force $F$, so that it moves with constant speed $v$. Water shoots straight out of the needle's tip. What is the approximate value of $F$?",
+      "choices": [
+        "$\\rho v^2 A_1$",
+        "$\\dfrac{\\rho v^2 A_1^2}{2A_2}$",
+        "$\\dfrac{\\rho v^2 A_1^2}{A_2}$",
+        "$\\dfrac{\\rho v^2 A_1^3}{2A_2^2}$",
+        "$\\dfrac{\\rho v^2 A_1^3}{A_2^2}$"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "solution": "Continuity gives exit speed $v' = vA_1/A_2$. With atmospheric pressure outside, Bernoulli gives $\\Delta P \\approx \\tfrac{1}{2}\\rho v'^2 = \\rho v^2 A_1^2/(2A_2^2)$. Then $F = A_1 \\Delta P$.",
+      "figure_ref": null,
+      "format": "calc",
+      "difficulty_band": 5,
+      "topics": [
+        {
+          "slug": "fluids",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "continuity plus Bernoulli"
+      ]
+    },
+    {
+      "number": 22,
+      "stem": "A spherical shell is made from a thin sheet of material with a mass per area of $\\sigma$. Consider two points, $P_1$ and $P_2$, which are close to each other, but just inside and outside the sphere, respectively. If the accelerations due to gravity at these points are $\\mathbf{g}_1$ and $\\mathbf{g}_2$, respectively, what is the value of $|\\mathbf{g}_1 - \\mathbf{g}_2|$?",
+      "choices": [
+        "$\\pi G\\sigma$",
+        "$4\\pi G\\sigma/3$",
+        "$2\\pi G\\sigma$",
+        "$4\\pi G\\sigma$",
+        "$8\\pi G\\sigma$"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "solution": "By the shell theorem the field inside is zero. Just outside it is $GM/R^2$ with $M = 4\\pi\\sigma R^2$, so the difference is $4\\pi G\\sigma$ and $R$ cancels.",
+      "figure_ref": null,
+      "format": "calc",
+      "difficulty_band": 5,
+      "topics": [
+        {
+          "slug": "gravitation",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "shell theorem"
+      ]
+    },
+    {
+      "number": 23,
+      "stem": "Collisions between ping pong balls and paddles are not perfectly elastic. Suppose that if a player holds a paddle still and drops a ball on top of it from any height $h$, it will bounce back up to height $h/2$. To keep the ball bouncing steadily, the player moves the paddle up and down, so that it is moving upward with speed 1.0 m/s whenever the ball hits it. What is the height to which the ball is bouncing?",
+      "choices": [
+        "0.21 m",
+        "0.45 m",
+        "1.0 m",
+        "1.7 m",
+        "There is not enough information to determine the height."
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "solution": "In the paddle's frame the ball keeps $1/\\sqrt{2}$ of its speed. With $v$ the ball's ground-frame speed before impact, $v - 1 = (v + 1)/\\sqrt{2}$, so $v = 5.83$ m/s and $h = v^2/2g = 1.7$ m.",
+      "figure_ref": null,
+      "format": "calc",
+      "difficulty_band": 5,
+      "topics": [
+        {
+          "slug": "momentum-collisions",
+          "weight": 1
+        },
+        {
+          "slug": "work-energy",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "collision in a moving frame",
+        "restitution"
+      ]
+    },
+    {
+      "number": 24,
+      "stem": "When a projectile falls through a fluid, it experiences a drag force proportional to the product of its cross-sectional area, the fluid density $\\rho_f$, and the square of its speed. Suppose a sphere of density $\\rho_s \\gg \\rho_f$ of radius $R$ is dropped in the fluid from rest. When the projectile has reached half of its terminal velocity, which of the following is its displacement proportional to?",
+      "choices": [
+        "$R\\sqrt{\\rho_s/\\rho_f}$",
+        "$R\\,\\rho_s/\\rho_f$",
+        "$R\\,(\\rho_s/\\rho_f)^{3/2}$",
+        "$R\\,(\\rho_s/\\rho_f)^{2}$",
+        "$R\\,(\\rho_s/\\rho_f)^{3}$"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "solution": "Drag $\\sim \\rho_f R^2 v^2$ with $v^2 \\sim g d$, and gravity $\\sim \\rho_s R^3 g$. Drag becomes comparable when $\\rho_f R^2 d \\sim \\rho_s R^3$, so $d \\sim (\\rho_s/\\rho_f)R$.",
+      "figure_ref": null,
+      "format": "concept",
+      "difficulty_band": 5,
+      "topics": [
+        {
+          "slug": "dimensional-analysis",
+          "weight": 1
+        },
+        {
+          "slug": "fluids",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "order-of-magnitude scaling",
+        "drag"
+      ]
+    },
+    {
+      "number": 25,
+      "stem": "A yo-yo consists of two massive uniform disks of radius $R$ connected by a thin axle. A thick string is wrapped many times around the axle, so that the end of the string is initially a distance $R$ from the axle. Then, the end of the string is held in place and the yo-yo is dropped from rest. Assume that energy losses are negligible, and that the string has negligible mass and always remains vertical. Below, we show a cross-section of the yo-yo partway through its descent. Between the moment the yo-yo is released and the moment the string completely unwinds, which of the following is true regarding the yo-yo's acceleration?",
+      "choices": [
+        "It is always zero.",
+        "It points downward, but decreases in magnitude over time.",
+        "It points downward and has constant magnitude.",
+        "It points downward, but increases in magnitude over time.",
+        "None of the above."
+      ],
+      "answer_index": 4,
+      "answer_letter": "E",
+      "solution": "As the string unwinds, the radius at which it leaves the axle shrinks, so more of the energy goes into rotation. The downward speed peaks near $z = 0.6\\ell$ and falls to zero when the string is fully unwound, so late in the fall the acceleration points upward.",
+      "figure_ref": "figures/fma-2024/q25-diagram.png",
+      "format": "concept",
+      "difficulty_band": 5,
+      "topics": [
+        {
+          "slug": "rotation",
+          "weight": 1
+        },
+        {
+          "slug": "work-energy",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "variable effective radius",
+        "energy split"
+      ]
+    }
+  ]
+}
