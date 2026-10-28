@@ -4,6 +4,7 @@
 2. **Unverified biology questions.** Biology has no stored exams and cannot be checked by code, so generated questions ship labeled "Unverified" with student flagging.
 3. **Schema not run.** `db/schema.sql` has not been executed against Postgres. Test it on a dev project first.
 4. **Free-tier pause policy.** Confirm the host's current rules for pausing idle free databases before launch.
-5. **USABO coverage.** Missing from the supplied material: 2019, 2022 to 2026, and some answer keys.
+5. **USABO coverage.** CEE's official index covers 2003 to 2018 only. The Hub links those 64 files and lists cutoffs for 2004 to 2026. The 2019 to 2021 exams in the supplied Drive folder belong to a third party and are not linked. No USABO question has been tagged yet, because tagging means downloading CEE's PDFs, which its terms restrict.
 6. **Skills requested but not installed.** product-manager, information-architecture, rag-pipeline-planning, few-shot-evaluation, and schema-design were not in the marketplace. GitHub candidates must have over 10,000 stars before installing.
 7. **Reuse terms for F=ma and USNCO.** AAPT's exams page says only that past exams are available for practice, and each PDF is marked "Copyright AAPT". ACS publishes its exams for practice but the terms were not read in full. The repo is private for now. Get permission or read the terms before making it public.
+8. **USNCO downloads are blocked.** ACS serves a bot check (Incapsula) for both its exams page and its PDF links, so scripted downloads fail and are not worked around. USNCO needs the PDFs saved by hand in a browser, or a decision to skip it.

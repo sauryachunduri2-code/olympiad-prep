@@ -1,14 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
-import { loadPapers, loadCutoffs, paperTitle } from '../lib/papers';
+import { loadPapers, loadCutoffs, loadUsaboLinks, paperTitle } from '../lib/papers';
 
 const fma = loadPapers().filter((p) => p.paper.competition_id === 'fma');
 const cut = loadCutoffs();
+const links = loadUsaboLinks();
 const years = [
   ...new Set([...Object.keys(cut.open.cutoffs), ...Object.keys(cut.semifinal.cutoffs)]),
 ].sort((a, b) => Number(b) - Number(a));
 const notes = (y: string) =>
   [cut.open.notes[y], cut.semifinal.notes[y]].filter(Boolean).join(' ');
+const official = (round: 'open' | 'semifinal', y: string) => links[round][y];
+const label = { open: 'Open', semifinal: 'Semifinal' } as const;
 ---
 
 <Base title="Hub: Olympiad Prep" current="hub" description="Official F=ma exams, USNCO and USABO resources, and past USABO cutoffs.">
@@ -66,32 +69,57 @@ const notes = (y: string) =>
       </div>
       <div class="body">
         <p>
-          CEE does not allow its exams to be stored or redistributed without permission, so no USABO questions
-          are kept here. The official <a href="https://usabo-trc.org/sites/default/files/allfiles/USABO%20Past%20Exams_0.pdf">index of 2003 to 2018 exams and keys</a>{' '}
-          is at the USABO site. What is here is the score each year's cutoff landed on.
+          CEE does not allow its exams to be stored or redistributed without permission, so no USABO
+          questions are kept here. Instead, the table links to CEE's own copy of each exam and answer key
+          and shows the score each year's cutoff landed on.
         </p>
-        <table>
-          <caption>
-            Past USABO cutoff scores. Semifinal scoring changed over the years, so read the notes before
-            comparing one year with another.
-          </caption>
-          <thead>
-            <tr><th scope="col">Year</th><th scope="col">Open exam</th><th scope="col">Semifinal</th><th scope="col">Notes</th></tr>
-          </thead>
-          <tbody>
-            {
-              years.map((y) => (
-                <tr>
-                  <th scope="row">{y}</th>
-                  <td>{cut.open.cutoffs[y] ?? ''}</td>
-                  <td>{cut.semifinal.cutoffs[y] ?? ''}</td>
-                  <td>{notes(y)}</td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
-        <p class="more">These figures were collected by the club coordinator. CEE does not publish them in one place.</p>
+        <div class="scroll" tabindex="0" role="region" aria-label="USABO exams and cutoffs by year">
+          <table>
+            <caption>
+              Official USABO exams and past cutoff scores. CEE's index stops at 2018. Semifinal scoring
+              changed over the years, so read the notes before comparing one year with another.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Open exam</th>
+                <th scope="col">Open cutoff</th>
+                <th scope="col">Semifinal exam</th>
+                <th scope="col">Semifinal cutoff</th>
+                <th scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                years.map((y) => (
+                  <tr>
+                    <th scope="row">{y}</th>
+                    <td>
+                      {official('open', y) && (
+                        <>
+                          <a href={official('open', y).exam} aria-label={`Open exam ${y}, exam`}>Exam</a>{' '}
+                          <a href={official('open', y).key} aria-label={`Open exam ${y}, answer key`}>Key</a>
+                        </>
+                      )}
+                    </td>
+                    <td>{cut.open.cutoffs[y] ?? ''}</td>
+                    <td>
+                      {official('semifinal', y) && (
+                        <>
+                          <a href={official('semifinal', y).exam} aria-label={`Semifinal exam ${y}, exam`}>Exam</a>{' '}
+                          <a href={official('semifinal', y).key} aria-label={`Semifinal exam ${y}, answer key`}>Key</a>
+                        </>
+                      )}
+                    </td>
+                    <td>{cut.semifinal.cutoffs[y] ?? ''}</td>
+                    <td>{notes(y)}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+        <p class="more">The cutoff scores were collected by the club coordinator. CEE does not publish them in one place.</p>
       </div>
     </section>
   </div>
@@ -152,8 +180,12 @@ const notes = (y: string) =>
     margin-top: 0;
   }
 
+  .scroll {
+    overflow-x: auto;
+  }
   table {
     width: 100%;
+    min-width: 640px;
     border-collapse: collapse;
     font-size: var(--step--1);
     margin-top: 24px;
@@ -184,6 +216,10 @@ const notes = (y: string) =>
   }
   td:last-child {
     color: var(--ink-soft);
+  }
+  td:nth-child(2),
+  td:nth-child(4) {
+    white-space: nowrap;
   }
 
   @media (max-width: 760px) {

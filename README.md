@@ -16,7 +16,7 @@ It has two parts:
 | `docs/spec.md` | The approved design: decisions, data model, retrieval and evaluation design, failure handling, roadmap |
 | `docs/open-items.md` | Unresolved risks and decisions |
 | `db/schema.sql` | Postgres schema with indexes and row-level security (not yet run) |
-| `data/` | Tagged exam data and source chunks (see `data/README.md`) |
+| `data/` | Tagged exam data, topic lists, USABO cutoffs, and links to CEE's official USABO exams (see `data/README.md`) |
 | `pipeline/` | Key extraction and figure cropping for AAPT exam PDFs |
 | `web/` | The Astro site: home, Hub, and timed paper pages. Run `npm install && npm run dev` inside it |
 

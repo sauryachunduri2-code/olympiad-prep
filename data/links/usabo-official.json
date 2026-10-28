@@ -1,0 +1,136 @@
+{
+  "source": "https://usabo-trc.org/sites/default/files/allfiles/USABO%20Past%20Exams_0.pdf",
+  "note": "Links to CEE's own copies. The exams themselves are not stored in this repo.",
+  "open": {
+    "2003": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam/2003_OpenExam.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam-answerkey/2003_OpenExam_AnswerKey.pdf"
+    },
+    "2004": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam/2004_OpenExam.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam-answerkey/2004_OpenExam_AnswerKey.pdf"
+    },
+    "2005": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam/2005_OpenExam.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam-answerkey/2005_OpenExam_AnswerKey.pdf"
+    },
+    "2006": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam/2006_OpenExam.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/allfiles/2006_OpenExam_AnsKey_Public.pdf"
+    },
+    "2007": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam/2007_OpenExam.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam-answerkey/2007_OpenExam_AnsKey.pdf"
+    },
+    "2008": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam/2008_OpenExam.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam-answerkey/2008_OpenExam_AnsKey.pdf"
+    },
+    "2009": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam/2009_OpenExam.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam-answerkey/2009_OpenExam_AnsKey.pdf"
+    },
+    "2010": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam/2010_OpenExam.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam-answerkey/2010_OpenExam_AnsKey.pdf"
+    },
+    "2011": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam/2011_OpenExam.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam-answerkey/2011_OpenExam_AnsKey.pdf"
+    },
+    "2012": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam/2012_Open%20Exam.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/openexam-answerkey/2012_OpenExam_AnsKey.pdf"
+    },
+    "2013": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/2013%20USABO%20Open%20Exam%20Final%20without%20%20Answers.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/2013%20USABO%20Open%20Exam%20Answers.pdf"
+    },
+    "2014": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/USABO%2014%20Open%20Exam%20Final.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/USABO%2014%20Open%20Exam%20Final%20ans.pdf"
+    },
+    "2015": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/allfiles/USABO%20Open%20Exam.Finalwoans_1.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/USABO%20Open%20Exam.Finalwans.pdf"
+    },
+    "2016": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/allfiles/USABO%2016%20Open%20Exam.Final%20web.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/USABO%2016%20Open%20Exam.Finalw.ans.pdf"
+    },
+    "2017": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/allfiles/USABO%2017%20Open%20Exam.Final.web.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/allfiles/USABO%2017%20OE%20Key.pdf"
+    },
+    "2018": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/allfiles/USABO%2018%20Open%20Exam.Final%20wo%20ans.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/allfiles/ctools/USABO%2018%20Open%20Exam.Final%20w.ans_0.pdf"
+    }
+  },
+  "semifinal": {
+    "2003": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal/2003-semifinal-exam-questions.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal-answers/2003-semifinal-answers.pdf"
+    },
+    "2004": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal/2004-semifinal-exam-partAB-questions.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal-answers/2004-semifinal-partAB-answers.pdf"
+    },
+    "2005": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal/2005-semifinal-partAandB-questions.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal-answers/2005-semifinal-partAandB-answers.pdf"
+    },
+    "2006": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal/2006-semifinal-partAandB-questions.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal-answers/2006-semifinal-partAandB-answers.pdf"
+    },
+    "2007": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal/2007-semifinal-partABandC-questions.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal-answers/2007-semifinal-partABandC-answers.pdf"
+    },
+    "2008": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal/2008-semifinal-exam-questions.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal-answers/2008-semifinal-answers.pdf"
+    },
+    "2009": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal/2009-semifinal-exam-questions.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal-answers/2009-semifinal-answers.pdf"
+    },
+    "2010": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal/2010-semifinal-exam-questions.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal-answers/2010-semifinal-exam-answers.pdf"
+    },
+    "2011": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal/2011-semifinal-exam-questions.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal-answers/2011-semifinal-answers.pdf"
+    },
+    "2012": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal/2012-semifinal-exam-partAandB-questions.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/images/pdf/exams/semifinal-answers/2012-semifinal-exam-partAandB-answers.pdf"
+    },
+    "2013": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/USABO%2013%20Semifinal%20FINAL.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/USABO%2013%20Semifinal%20%20Answer%20Key.pdf"
+    },
+    "2014": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/USABO%2014%20Semifinal%20Final.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/USABO%2014%20Semifinal%20ans.pdf"
+    },
+    "2015": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/USABO%2015%20Semifinal%20Finalwoans.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/USABO%2015%20Semifinal%20Finalwans.pdf"
+    },
+    "2016": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/USABO%2016%20Semifinal%20FINAL%20woanswers%20web.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/USABO%2016%20Semifinal%20with%20answersweb.pdf"
+    },
+    "2017": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/allfiles/USABO%2017%20Semifinal%20Final.Web.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/allfiles/USABO%2017%20Semifinal%20Final%20Key%20web.pdf"
+    },
+    "2018": {
+      "exam": "https://www.usabo-trc.org/sites/default/files/allfiles/ctools/USABO%2018%20Semifinal%20Final1%20%20wo%20ans.pdf",
+      "key": "https://www.usabo-trc.org/sites/default/files/allfiles/USABO%2018%20Semifinal%20Final%20%20w.pdf"
+    }
+  }
+}

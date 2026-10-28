@@ -57,6 +57,13 @@ export function topicNames(): Record<string, string> {
   );
 }
 
+export function loadUsaboLinks(): {
+  open: Record<string, { exam: string; key: string }>;
+  semifinal: Record<string, { exam: string; key: string }>;
+} {
+  return JSON.parse(fs.readFileSync(path.join(root, 'links', 'usabo-official.json'), 'utf8'));
+}
+
 export function loadCutoffs() {
   return JSON.parse(fs.readFileSync(path.join(root, 'cutoffs', 'usabo.json'), 'utf8'));
 }
