@@ -1,0 +1,739 @@
+{
+  "paper": {
+    "competition_id": "fma",
+    "year": 2023,
+    "round": "fma",
+    "form": null,
+    "source_url": "https://aapt.org/physicsteam/upload/2023_F-ma_Exam.pdf",
+    "solutions_url": "https://aapt.org/physicsteam/upload/F-ma-2023-Solutions.pdf",
+    "storage_policy": "full",
+    "question_count": 25,
+    "time_limit_minutes": 75,
+    "points_per_question": 1,
+    "constants": "g = 10 N/kg"
+  },
+  "tagging": {
+    "tagged_on": "2026-10-27",
+    "tagged_by": "claude-code",
+    "key_source": "red bold letters in the official solutions PDF, read by pipeline/extract_fma_key.py",
+    "key_checked_against_official_solutions": true,
+    "difficulty_basis": "position in paper: Q1-5 = 1, Q6-10 = 2, Q11-15 = 3, Q16-20 = 4, Q21-25 = 5",
+    "transcription": "verbatim from the exam PDF"
+  },
+  "questions": [
+    {
+      "number": 1,
+      "stem": "A bead on a circular hoop with radius 2 m travels counterclockwise for 10 s and completes 2.25 rotations, at which point it reaches the position shown. In the past 10 s, what were its average speed and the direction of its average velocity?",
+      "choices": [
+        "$\\dfrac{\\sqrt{2}}{5}$ m/s, ↙",
+        "$\\dfrac{2\\pi}{5}$ m/s, ↙",
+        "$\\dfrac{9\\pi}{10}$ m/s, ↙",
+        "$\\dfrac{2\\pi}{5}$ m/s, ↘",
+        "$\\dfrac{9\\pi}{10}$ m/s, ↘"
+      ],
+      "answer_index": 4,
+      "answer_letter": "E",
+      "also_accepted": [],
+      "solution": "Distance is $2.25 \\times 2\\pi(2) = 9\\pi$ m in 10 s, so the average speed is $9\\pi/10$ m/s. That leaves (C) and (E). Ten seconds ago the bead was at the left of the hoop, so the displacement to the bottom points down and to the right.",
+      "figure_ref": "figures/fma-2023/q01-diagram.png",
+      "format": "calc",
+      "difficulty_band": 1,
+      "topics": [
+        {
+          "slug": "kinematics",
+          "weight": 1
+        },
+        {
+          "slug": "circular-motion",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "speed vs velocity",
+        "displacement over a loop"
+      ]
+    },
+    {
+      "number": 2,
+      "stem": "A mass on an ideal pendulum is released from rest at point I. When it reaches point II, which of the following shows the direction of its acceleration?",
+      "choices": null,
+      "answer_index": 1,
+      "answer_letter": "B",
+      "also_accepted": [],
+      "solution": "The mass is both moving in a circle (inward centripetal acceleration) and speeding up (tangential acceleration). The answer must be a positive sum of arrows (A) and (C), which is (B).",
+      "figure_ref": "figures/fma-2023/q02-full.png",
+      "format": "figure",
+      "difficulty_band": 1,
+      "topics": [
+        {
+          "slug": "circular-motion",
+          "weight": 1
+        },
+        {
+          "slug": "forces",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "centripetal plus tangential acceleration"
+      ]
+    },
+    {
+      "number": 3,
+      "stem": "A soccer ball is kicked up a hill with a flat top, as shown. The ball bounces twice on the hill, at the points shown, then lands on the top and begins rolling horizontally. Which of the following shows the vertical component of its velocity as a function of time?",
+      "choices": null,
+      "answer_index": 4,
+      "answer_letter": "E",
+      "also_accepted": [],
+      "solution": "Gravity gives $v_y$ a constant downward slope everywhere except at the bounces, which leaves (D) and (E). The vertical speeds in the figure shrink as the ball nears the top, which is (E).",
+      "figure_ref": "figures/fma-2023/q03-full.png",
+      "format": "graph",
+      "difficulty_band": 1,
+      "topics": [
+        {
+          "slug": "kinematics",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "reading graphs",
+        "projectile with bounces"
+      ]
+    },
+    {
+      "number": 4,
+      "stem": "A box of mass $m$ is at the bottom of an inclined plane with angle $\\theta$ to the horizontal, and height $h$. A person drags the box very slowly up the plane, by applying a force parallel to the plane. The coefficient of kinetic friction between the box and plane is $\\mu_k$. When the box reaches the top of the plane, how much work has the person done?",
+      "choices": [
+        "$mgh\\,(1 + \\mu_k \\sin\\theta)$",
+        "$mgh\\,(1 + \\mu_k \\cos\\theta)$",
+        "$mgh\\,(1 + \\mu_k \\tan\\theta)$",
+        "$mgh\\,(1 + \\mu_k \\csc\\theta)$",
+        "$mgh\\,(1 + \\mu_k \\cot\\theta)$"
+      ],
+      "answer_index": 4,
+      "answer_letter": "E",
+      "also_accepted": [],
+      "solution": "Moving slowly, the applied force is $mg\\sin\\theta + \\mu_k mg\\cos\\theta$ over a distance $h/\\sin\\theta$. The work is $mgh(\\sin\\theta + \\mu_k\\cos\\theta)/\\sin\\theta = mgh(1 + \\mu_k\\cot\\theta)$.",
+      "figure_ref": "figures/fma-2023/q04-diagram.png",
+      "format": "calc",
+      "difficulty_band": 1,
+      "topics": [
+        {
+          "slug": "work-energy",
+          "weight": 1
+        },
+        {
+          "slug": "forces",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "work against friction on an incline"
+      ]
+    },
+    {
+      "number": 5,
+      "stem": "Two blocks of mass $m$ and a block of mass $3m$ are attached to a system of massless fixed pulleys and massless string, as shown. Assume all surfaces are frictionless. What is the acceleration of each mass $m$?",
+      "choices": [
+        "$g/8$",
+        "$g/5$",
+        "$g/4$",
+        "$g/3$",
+        "$2g/3$"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "also_accepted": [],
+      "solution": "Splitting the large block down the middle gives two separate Atwood machines with masses $m$ and $3m/2$. The acceleration is $(3m/2 - m)g/(3m/2 + m) = g/5$.",
+      "figure_ref": "figures/fma-2023/q05-diagram.png",
+      "format": "calc",
+      "difficulty_band": 1,
+      "topics": [
+        {
+          "slug": "forces",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "Atwood machine",
+        "symmetry splitting"
+      ]
+    },
+    {
+      "number": 6,
+      "stem": "A ball at the end of a rope of length 0.5 m is swung in a horizontal circle, with a speed of 15 m/s. The other end of the rope is fixed in place. What is the height difference between the ends of the rope?",
+      "choices": [
+        "1.1 cm",
+        "2.2 cm",
+        "3.8 cm",
+        "4.9 cm",
+        "7.5 cm"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "also_accepted": [],
+      "solution": "Every choice is a small angle, so $\\theta \\approx \\tan\\theta = g r/v^2$ with $r \\approx \\ell$. The height difference is $\\ell\\theta \\approx g\\ell^2/v^2 = 10(0.5)^2/15^2 \\approx 1.1$ cm.",
+      "figure_ref": null,
+      "format": "calc",
+      "difficulty_band": 2,
+      "topics": [
+        {
+          "slug": "circular-motion",
+          "weight": 1
+        },
+        {
+          "slug": "forces",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "conical pendulum",
+        "small-angle approximation"
+      ]
+    },
+    {
+      "number": 7,
+      "stem": "Two boxes are stacked side-by-side on top of a larger box as shown. All three boxes have mass $m$, the coefficient of static friction between the left box and the bottom box is $\\mu_s$, and all other surfaces are frictionless. A rightward force $F$ is applied to the bottom box. What is the minimum value of $\\mu_s$ so that the upper boxes don't slide?",
+      "choices": [
+        "$\\dfrac{2F}{mg}$",
+        "$\\dfrac{3F}{mg}$",
+        "$\\dfrac{F}{2mg}$",
+        "$\\dfrac{2F}{3mg}$",
+        "$\\dfrac{F}{3mg}$"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "also_accepted": [],
+      "solution": "The whole stack accelerates at $F/3m$, so the two upper boxes need a net horizontal force of $2F/3$. Only friction on the left box supplies it: $\\mu_s mg \\ge 2F/3$.",
+      "figure_ref": "figures/fma-2023/q07-diagram.png",
+      "format": "calc",
+      "difficulty_band": 2,
+      "topics": [
+        {
+          "slug": "forces",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "friction as the only horizontal force",
+        "system acceleration"
+      ]
+    },
+    {
+      "number": 8,
+      "stem": "Two stars $\\alpha$ and $\\beta$, with masses satisfying $m_\\alpha/m_\\beta = 10$, are in circular orbits around each other. In the rest frame of this system, find the ratio of the speeds $v_\\alpha/v_\\beta$.",
+      "choices": [
+        "$\\dfrac{1}{11}$",
+        "$\\dfrac{1}{10}$",
+        "$\\dfrac{1}{9}$",
+        "9",
+        "10"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "also_accepted": [],
+      "solution": "Total momentum is zero in the rest frame, so $m_\\alpha v_\\alpha = m_\\beta v_\\beta$ and $v_\\alpha/v_\\beta = m_\\beta/m_\\alpha = 1/10$.",
+      "figure_ref": null,
+      "format": "concept",
+      "difficulty_band": 2,
+      "topics": [
+        {
+          "slug": "momentum-collisions",
+          "weight": 1
+        },
+        {
+          "slug": "gravitation",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "center-of-mass frame"
+      ]
+    },
+    {
+      "number": 9,
+      "stem": "A helium balloon is released from the floor in a room at rest, then slowly rises and comes to rest touching the ceiling. During this process, the gravitational potential energy of the balloon has increased. Since energy is conserved, the energy of something else must have decreased during this process. Which of the following is the main contribution to this decrease?",
+      "choices": [
+        "The kinetic energy of the balloon decreased.",
+        "The elastic potential energy of the balloon decreased.",
+        "The thermal energy of the air in the balloon decreased.",
+        "The thermal energy of the air in the room decreased.",
+        "The gravitational potential energy of the air in the room decreased."
+      ],
+      "answer_index": 4,
+      "answer_letter": "E",
+      "also_accepted": [],
+      "solution": "The air moves down to fill the space the balloon leaves, lowering its gravitational potential energy by more than the balloon's rose.",
+      "figure_ref": null,
+      "format": "concept",
+      "difficulty_band": 2,
+      "topics": [
+        {
+          "slug": "work-energy",
+          "weight": 1
+        },
+        {
+          "slug": "fluids",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "energy bookkeeping for buoyancy"
+      ]
+    },
+    {
+      "number": 10,
+      "stem": "An archer takes aim at a target that is 100 m away. Assuming she holds the bow at the same height as the center of the target and shoots an arrow with velocity $v = 100$ m/s, at what angle above the horizontal should she aim the bow so that the arrow hits the center of the target?",
+      "choices": [
+        "$\\dfrac{\\arccos(1/5)}{2}$",
+        "$\\dfrac{\\arcsin(1/5)}{2}$",
+        "$\\dfrac{\\arccos(1/10)}{2}$",
+        "$\\dfrac{\\arcsin(1/10)}{2}$",
+        "$\\dfrac{\\arctan(2/5)}{2}$"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "also_accepted": [],
+      "solution": "Launch and landing heights match, so $R = v^2\\sin(2\\theta)/g$. With $R = 100$ m and $v = 100$ m/s, $\\sin 2\\theta = 1/10$.",
+      "figure_ref": null,
+      "format": "calc",
+      "difficulty_band": 2,
+      "topics": [
+        {
+          "slug": "kinematics",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "range equation"
+      ]
+    },
+    {
+      "number": 11,
+      "stem": "A projectile is thrown from a horizontal surface, and reaches a maximum height $h$ and also lands a distance $h$ from the launch point. Neglecting air resistance, what is the maximum height for a projectile thrown directly upward with the same initial speed?",
+      "choices": [
+        "$\\dfrac{17h}{16}$",
+        "$\\dfrac{13h}{12}$",
+        "$\\dfrac{9h}{8}$",
+        "$\\dfrac{5h}{4}$",
+        "$2h$"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "also_accepted": [],
+      "solution": "Height gives $h = v_y^2/2g$; range gives $h = 2v_xv_y/g$. Together, $v_y = 4v_x$. Straight up with the full speed reaches $(v_x^2 + v_y^2)/2g = 17v_x^2/2g = 17h/16$.",
+      "figure_ref": null,
+      "format": "calc",
+      "difficulty_band": 3,
+      "topics": [
+        {
+          "slug": "kinematics",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "height and range together"
+      ]
+    },
+    {
+      "number": 12,
+      "stem": "A block of mass $m$ is initially held in place by two massless strings, as shown. The tension in the diagonal string is $T_1$. Next, the horizontal string is cut, and immediately afterward the tension in the diagonal string is $T_2$. Which of the following is true?",
+      "choices": [
+        "$T_1 < mg < T_2$",
+        "$T_2 < mg < T_1$",
+        "$T_1 < T_2 < mg$",
+        "$mg < T_2 < T_1$",
+        "$T_1 = T_2 < mg$"
+      ],
+      "answer_index": 1,
+      "answer_letter": "B",
+      "also_accepted": [],
+      "solution": "With angle $\\theta$ from the vertical, $T_1 = mg/\\cos\\theta$ before the cut. Right after, the block starts at rest, so balance along the string gives $T_2 = mg\\cos\\theta$. Hence $T_2 < mg < T_1$.",
+      "figure_ref": "figures/fma-2023/q12-diagram.png",
+      "format": "concept",
+      "difficulty_band": 3,
+      "topics": [
+        {
+          "slug": "forces",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "instantaneous force balance after a cut"
+      ]
+    },
+    {
+      "number": 13,
+      "stem": "A uniform box with mass $m$ is at rest on a horizontal surface, and the coefficient of static friction between them is $\\mu_s$. A force directed at an angle of $85^\\circ$ above the horizontal is applied to the center of the box, with a linearly increasing magnitude $F = \\beta t$. The box will eventually slide or lift off the ground. Which of the following is correct?",
+      "choices": [
+        "If $\\mu_s < \\tan 85^\\circ$, the box will lift off the ground first.",
+        "If $\\mu_s < \\tan 85^\\circ$, the box will slide first.",
+        "For any value of $\\mu_s$, the box will lift off the ground first.",
+        "For any value of $\\mu_s$, the box will slide first.",
+        "The answer depends on the values of $\\beta$, $g$, and $m$."
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "also_accepted": [],
+      "solution": "The box lifts off only when the normal force reaches zero. Just before that, the normal force is tiny, so the maximum friction is tiny and cannot balance the horizontal part of the push. It slides first for any $\\mu_s$.",
+      "figure_ref": "figures/fma-2023/q13-diagram.png",
+      "format": "concept",
+      "difficulty_band": 3,
+      "topics": [
+        {
+          "slug": "forces",
+          "weight": 1
+        },
+        {
+          "slug": "statics",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "limiting friction as normal force vanishes"
+      ]
+    },
+    {
+      "number": 14,
+      "stem": "The object shown below is made of three rigidly connected, identical rods with uniform density. When it stands upright on a horizontal table, what fraction of its weight rests on the left leg?",
+      "choices": [
+        "$\\dfrac{1}{12}$",
+        "$\\dfrac{1}{6}$",
+        "$\\dfrac{1}{4}$",
+        "$\\dfrac{1}{3}$",
+        "$\\dfrac{5}{12}$"
+      ],
+      "answer_index": 4,
+      "answer_letter": "E",
+      "also_accepted": [],
+      "solution": "Each rod weighs $W/3$. Torques about the bottom of the right leg: $N\\ell = \\tfrac{W}{3}\\left(\\tfrac{\\ell}{4} + \\tfrac{\\ell}{4} + \\tfrac{3\\ell}{4}\\right)$, so $N = 5W/12$.",
+      "figure_ref": "figures/fma-2023/q14-diagram.png",
+      "format": "calc",
+      "difficulty_band": 3,
+      "topics": [
+        {
+          "slug": "statics",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "torque balance",
+        "locating centers of mass"
+      ]
+    },
+    {
+      "number": 15,
+      "stem": "The following plot shows the speed $v(r)$ at which stars orbit about the center of a galaxy, as a function of their distance $r$ from the center. Assuming the galaxy has a spherically symmetric mass distribution, which plot best shows the mass of the galaxy $M(r)$ enclosed within radius $r$?",
+      "choices": null,
+      "answer_index": 1,
+      "answer_letter": "B",
+      "also_accepted": [
+        3
+      ],
+      "solution": "Gravity supplies the centripetal force, $GM(r)/r^2 = v^2/r$, so constant $v$ needs $M(r) \\propto r$, which is (B). AAPT also accepted (D) because at the figure's resolution its large-$r$ behavior is hard to tell from linear.",
+      "figure_ref": "figures/fma-2023/q15-full.png",
+      "format": "graph",
+      "difficulty_band": 3,
+      "topics": [
+        {
+          "slug": "gravitation",
+          "weight": 1
+        },
+        {
+          "slug": "circular-motion",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "rotation curve",
+        "enclosed mass"
+      ]
+    },
+    {
+      "number": 16,
+      "stem": "A bead attached to a string of length $\\ell = 10$ m is released from a very small angle $\\theta_0$ to the vertical. A wall is placed in the path of the bead such that the bead collides elastically with the wall when the string is at an angle $\\theta_0/2$ to the vertical, as shown. What is the time interval between the bead's collisions with the wall?",
+      "choices": [
+        "$\\dfrac{2\\pi}{3}$ s",
+        "$\\dfrac{3\\pi}{4}$ s",
+        "$\\dfrac{4\\pi}{3}$ s",
+        "$\\dfrac{3\\pi}{2}$ s",
+        "$2\\pi$ s"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "also_accepted": [],
+      "solution": "Without the wall, $\\theta = \\theta_0\\cos(t\\sqrt{g/\\ell})$ with period $2\\pi$ s. At the wall the phase jumps from $120^\\circ$ to $240^\\circ$, skipping a third of the cycle. The interval is $\\tfrac{2}{3}(2\\pi) = 4\\pi/3$ s.",
+      "figure_ref": "figures/fma-2023/q16-diagram.png",
+      "format": "calc",
+      "difficulty_band": 4,
+      "topics": [
+        {
+          "slug": "oscillations",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "pendulum phase",
+        "collision with a wall as a phase jump"
+      ]
+    },
+    {
+      "number": 17,
+      "stem": "Three physical pendulums are built as shown. The first is a typical pendulum with a massless rope, and the second and third are made of uniform rods. What is the correct ranking of the moments of inertia $I_1$, $I_2$, and $I_3$ about the pivot points?",
+      "choices": [
+        "$I_1 > I_2 > I_3$",
+        "$I_3 > I_2 > I_1$",
+        "$I_1 = I_3 > I_2$",
+        "$I_2 > I_3 > I_1$",
+        "$I_3 > I_1 > I_2$"
+      ],
+      "answer_index": 4,
+      "answer_letter": "E",
+      "also_accepted": [],
+      "solution": "$I_1 = m\\ell^2$, $I_2 = \\tfrac{1}{3}m\\ell^2$, $I_3 = \\tfrac{4}{3}m\\ell^2$ (rod about its end, with length $2\\ell$). So $I_3 > I_1 > I_2$.",
+      "figure_ref": "figures/fma-2023/q17-diagram.png",
+      "format": "concept",
+      "difficulty_band": 4,
+      "topics": [
+        {
+          "slug": "rotation",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "moment of inertia of a rod about its end"
+      ]
+    },
+    {
+      "number": 18,
+      "stem": "Alice, Bob, and Carol are each given identical airtight bags containing identical rocks, and a large tub of water with a scale sitting on the bottom. Each of them measures the weight of their bag and rock by putting the bag on the scale, using three slightly different procedures.\n- Alice closes the bag carefully, so that there is no air inside.\n- Bob fills the rest of the bag with water before closing it.\n- Carol closes the bag loosely, so that it contains some air.\nWhat is the correct ranking of their measured weights $W_A$, $W_B$, and $W_C$?",
+      "choices": [
+        "$W_C < W_A < W_B$",
+        "$W_A < W_C < W_B$",
+        "$W_A < W_C = W_B$",
+        "$W_A = W_C < W_B$",
+        "$W_C < W_A = W_B$"
+      ],
+      "answer_index": 4,
+      "answer_letter": "E",
+      "also_accepted": [],
+      "solution": "The scale reads weight minus buoyancy, $mg - \\rho Vg$. Bob's added water adds equal weight and displaced-water buoyancy, so $W_B = W_A$. Carol adds volume with almost no mass, so $W_C = W_A - \\rho\\Delta V g$.",
+      "figure_ref": null,
+      "format": "concept",
+      "difficulty_band": 4,
+      "topics": [
+        {
+          "slug": "fluids",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "buoyancy and apparent weight"
+      ]
+    },
+    {
+      "number": 19,
+      "stem": "A student sets up a simple pendulum, measures its length to be $(0.50 \\pm 0.01)$ m, and observes a period of oscillation of $(1.4 \\pm 0.1)$ s. Using this data, the student computes $g = 10.1$ m/s$^2$. What is the uncertainty of this measurement?",
+      "choices": [
+        "0.7 m/s$^2$",
+        "1.2 m/s$^2$",
+        "1.4 m/s$^2$",
+        "1.9 m/s$^2$",
+        "2.7 m/s$^2$"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "also_accepted": [],
+      "solution": "$g = 4\\pi^2 L/T^2$. Independent relative uncertainties add in quadrature and the period's counts twice: $\\Delta g/g = \\sqrt{(\\Delta L/L)^2 + (2\\Delta T/T)^2} \\approx 0.14$, so $\\Delta g \\approx 1.4$ m/s$^2$.",
+      "figure_ref": null,
+      "format": "calc",
+      "difficulty_band": 4,
+      "topics": [
+        {
+          "slug": "measurement",
+          "weight": 1
+        },
+        {
+          "slug": "oscillations",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "propagation of uncertainty"
+      ]
+    },
+    {
+      "number": 20,
+      "stem": "A mass attached to the end of a string oscillates like a pendulum with small amplitude. The mass has horizontal velocity $v_x(t)$ and vertical velocity $v_y(t)$. Which of the following could be a graph of the curve $(v_x(t), v_y(t))$ over a complete oscillation?",
+      "choices": null,
+      "answer_index": 2,
+      "answer_letter": "C",
+      "also_accepted": [],
+      "solution": "On a pendulum, $v_y$ hits zero four times per cycle (twice at the ends, twice at the bottom), and only (C) crosses the $v_x$ axis four times.",
+      "figure_ref": "figures/fma-2023/q20-full.png",
+      "format": "graph",
+      "difficulty_band": 4,
+      "topics": [
+        {
+          "slug": "oscillations",
+          "weight": 1
+        },
+        {
+          "slug": "kinematics",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "phase-space curves",
+        "counting zero crossings"
+      ]
+    },
+    {
+      "number": 21,
+      "stem": "A smooth ring of radius $R$ and mass $m$ lies on a frictionless surface. A point mass, also of mass $m$, is placed just inside the ring and given a speed $v$ tangent to the inner surface of the ring. How long does it take for the point mass to return to its initial position relative to the ring?",
+      "choices": [
+        "$\\dfrac{\\pi R}{v}$",
+        "$\\dfrac{\\sqrt{2}\\,\\pi R}{v}$",
+        "$\\dfrac{2\\pi R}{v}$",
+        "$\\dfrac{2\\sqrt{2}\\,\\pi R}{v}$",
+        "$\\dfrac{4\\pi R}{v}$"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "also_accepted": [],
+      "solution": "The mass makes many small elastic collisions with the ring. An elastic collision preserves the relative speed, so the tangential speed relative to the ring stays $v$, and the time is $2\\pi R/v$.",
+      "figure_ref": "figures/fma-2023/q21-diagram.png",
+      "format": "calc",
+      "difficulty_band": 5,
+      "topics": [
+        {
+          "slug": "momentum-collisions",
+          "weight": 1
+        },
+        {
+          "slug": "circular-motion",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "relative velocity in elastic collisions"
+      ]
+    },
+    {
+      "number": 22,
+      "stem": "Two springs with different spring constants are connected in three ways, as shown. In the second case, the springs are connected to opposite ends of a string, which runs under a massless frictionless pulley. In each case, the two springs act like a single spring with an effective spring constant $k_A$, $k_B$, or $k_C$. Which of the following is correct?",
+      "choices": [
+        "$k_A > k_B > k_C$",
+        "$k_A > k_C > k_B$",
+        "$k_C > k_B > k_A$",
+        "$k_C > k_A > k_B$",
+        "$k_B > k_A > k_C$"
+      ],
+      "answer_index": 0,
+      "answer_letter": "A",
+      "also_accepted": [],
+      "solution": "Parallel: $k_A = k_1 + k_2$. Series: $k_C = k_1k_2/(k_1 + k_2)$. The pulley case has equal spring forces like series, but a pull of $\\ell$ lengthens the system by $2\\ell$ and the forces add, giving $k_B = 4k_1k_2/(k_1 + k_2)$. So $k_A > k_B > k_C$.",
+      "figure_ref": "figures/fma-2023/q22-diagram.png",
+      "format": "calc",
+      "difficulty_band": 5,
+      "topics": [
+        {
+          "slug": "springs",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "effective spring constant",
+        "pulley doubling"
+      ]
+    },
+    {
+      "number": 23,
+      "stem": "An astronomer on Earth, which is a distance $L_\\odot$ from the Sun, observes a star and galaxy. The star is a distance $L_s \\gg L_\\odot$ away, and the galaxy is much further away than the star. Throughout the year, the angular distance between the star and galaxy appears to vary, reaching a minimum of 2 arcseconds on January 1st and a maximum of 2.5 arcseconds on July 1st. (One degree is equal to 3600 arcseconds.) Assume the Sun, star, and galaxy do not move relative to each other, and that the Earth's orbit lies within their plane. What is the ratio $L_s/L_\\odot$?",
+      "choices": [
+        "$1.4 \\times 10^4$",
+        "$7 \\times 10^4$",
+        "$4 \\times 10^5$",
+        "$8 \\times 10^5$",
+        "$4 \\times 10^6$"
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "also_accepted": [],
+      "solution": "This is parallax. Half an orbit moves Earth by $2L_\\odot$, so $\\Delta\\theta = 2L_\\odot/L_s$ with $\\Delta\\theta = 0.5'' = 2.4 \\times 10^{-6}$ rad. Then $L_s/L_\\odot \\approx 8 \\times 10^5$.",
+      "figure_ref": "figures/fma-2023/q23-diagram.png",
+      "format": "calc",
+      "difficulty_band": 5,
+      "topics": [
+        {
+          "slug": "measurement",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "parallax",
+        "small-angle estimate"
+      ]
+    },
+    {
+      "number": 24,
+      "stem": "A very heavy plate continuously moves up and down with a small speed $v$, switching directions after each time $t$. At a random time, a ball is dropped from rest far above the plate, then bounces elastically off of it. How does the ball's speed change during this collision?",
+      "choices": [
+        "The ball always slows down.",
+        "The ball is more likely to slow down than to speed up.",
+        "The ball is equally likely to slow down or speed up.",
+        "The ball is more likely to speed up than to slow down.",
+        "The ball always speeds up."
+      ],
+      "answer_index": 3,
+      "answer_letter": "D",
+      "also_accepted": [],
+      "solution": "A plate moving up speeds the ball up. A plate moving down still has time to reverse and meet the ball as it rises, so the ball can still be hit. Speed-ups outweigh slow-downs.",
+      "figure_ref": null,
+      "format": "concept",
+      "difficulty_band": 5,
+      "topics": [
+        {
+          "slug": "momentum-collisions",
+          "weight": 1
+        }
+      ],
+      "skills": [
+        "collision with a moving wall",
+        "Fermi acceleration"
+      ]
+    },
+    {
+      "number": 25,
+      "stem": "A skier slides from rest along a frictionless slope with incline angle $\\theta = 30^\\circ$ for 150 m, then smoothly transitions into a horizontal jumping ramp of height $h_r = 5$ m. Neglecting air resistance, after the skier leaves the ramp, about how far will they travel horizontally before landing?",
+      "choices": [
+        "164 m",
+        "173 m",
+        "181 m",
+        "200 m",
+        "210 m"
+      ],
+      "answer_index": 2,
+      "answer_letter": "C",
+      "also_accepted": [],
+      "solution": "Speed at the ramp is $v = \\sqrt{2g(150\\sin 30^\\circ)} \\approx 38.7$ m/s, launched horizontally from $5$ m above a slope descending at $30^\\circ$. Solving for where the parabola meets the slope gives $t \\approx 4.7$ s and $x = vt \\approx 181$ m.",
+      "figure_ref": "figures/fma-2023/q25-diagram.png",
+      "format": "calc",
+      "difficulty_band": 5,
+      "topics": [
+        {
+          "slug": "kinematics",
+          "weight": 1
+        },
+        {
+          "slug": "work-energy",
+          "weight": 0.5
+        }
+      ],
+      "skills": [
+        "projectile landing on a slope",
+        "energy then kinematics"
+      ]
+    }
+  ]
+}

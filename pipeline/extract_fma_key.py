@@ -4,8 +4,12 @@ The solutions booklet reprints every question and marks the correct choice by
 setting its letter in red bold. Figure labels use the same letters in plain
 black, so color is the only reliable signal.
 
+A few questions mark two letters: AAPT sometimes accepts a second answer after
+the fact (2023 Q15). Letters come out in choice order, so the explanation text
+says which was the original answer; the tagging step must name it.
+
 Usage: python -I extract_fma_key.py solutions.pdf
-Prints a JSON object mapping question number to answer letter.
+Prints a JSON object mapping question number to the list of accepted letters.
 """
 import json
 import re
@@ -31,9 +35,7 @@ def extract_key(path):
                 for span in spans:
                     letter = span["text"].strip()
                     if span["color"] == RED and letter in tuple("ABCDE"):
-                        if question in key:
-                            raise ValueError(f"second marked answer for Q{question}")
-                        key[question] = letter
+                        key.setdefault(question, []).append(letter)
     return key
 
 

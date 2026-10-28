@@ -7,7 +7,7 @@ It has two parts:
 - **Resource Hub**: official past exams, syllabi, and readings, split by discipline.
 - **Quiz engine**: drills by subtopic and full timed mocks. Questions come from official past exams, and generated variants of calculation questions are re-solved by code before a student sees them.
 
-**Status:** planning is finished. The pilot paper (F=ma 2024) is extracted, tagged, and checked against the official key. No application code exists yet.
+**Status:** two F=ma papers (2023, 2024) are extracted, tagged, and checked against the official keys, and a static site in `web/` lets you sit them timed and see results. There is no sign-in, database, or AI yet. Everything saves in the visitor's browser.
 
 ## Where things are
 
@@ -18,6 +18,7 @@ It has two parts:
 | `db/schema.sql` | Postgres schema with indexes and row-level security (not yet run) |
 | `data/` | Tagged exam data and source chunks (see `data/README.md`) |
 | `pipeline/` | Key extraction and figure cropping for AAPT exam PDFs |
+| `web/` | The Astro site: home, Hub, and timed paper pages. Run `npm install && npm run dev` inside it |
 
 ## Source rules
 

@@ -1,0 +1,44 @@
+---
+import '@fontsource-variable/literata';
+import '@fontsource-variable/schibsted-grotesk';
+import 'katex/dist/katex.min.css';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  current?: 'hub';
+}
+const { title, description = 'Practice real F=ma exams under timed conditions and track your results.', current } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='16' rx='12' ry='8' fill='%232f3436'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <header class="site-head">
+      <div class="wrap">
+        <a class="brand" href="/">Olympiad Prep</a>
+        <nav aria-label="Main">
+          <a href="/hub/" aria-current={current === 'hub' ? 'page' : undefined}>Hub</a>
+        </nav>
+      </div>
+    </header>
+    <main><slot /></main>
+    <footer class="site-foot">
+      <div class="wrap">
+        <p>
+          Past exam questions belong to their publishers: AAPT for F=ma, ACS for USNCO, and the Center for
+          Excellence in Education for USABO. They are shown here for practice. Check the official source
+          before relying on any answer.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

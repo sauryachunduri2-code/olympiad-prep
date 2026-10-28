@@ -1,0 +1,240 @@
+:root {
+  --paper: #eef2f1;
+  --sheet: #f8faf9;
+  --ink: #14232b;
+  --ink-soft: #45565e;
+  --blue: #17566c;
+  --blue-tint: #d5e6eb;
+  --graphite: #2f3436;
+  --red: #b8322a;
+  --rule: #c3cfd0;
+
+  --serif: 'Literata Variable', Georgia, serif;
+  --sans: 'Schibsted Grotesk Variable', system-ui, sans-serif;
+
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.3rem;
+  --step-2: 1.75rem;
+  --step-3: clamp(2.1rem, 1.5rem + 2.4vw, 3.2rem);
+
+  --gutter: clamp(16px, 4vw, 40px);
+  --measure: 66ch;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--step-0);
+  line-height: 1.6;
+}
+
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--sans);
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--step-3);
+  font-weight: 700;
+}
+h2 {
+  font-size: var(--step-2);
+  font-weight: 650;
+}
+h3 {
+  font-size: var(--step-1);
+  font-weight: 620;
+}
+
+p {
+  margin: 0 0 1em;
+  max-width: var(--measure);
+}
+
+a {
+  color: var(--blue);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.wrap {
+  width: min(1120px, 100% - 2 * var(--gutter));
+  margin-inline: auto;
+}
+
+/* Site chrome */
+.site-head {
+  border-bottom: 1px solid var(--rule);
+}
+.site-head .wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 16px;
+}
+.brand {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.site-head nav {
+  display: flex;
+  gap: 22px;
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  font-weight: 560;
+}
+.site-head nav a {
+  color: var(--ink);
+  text-decoration: none;
+  padding-block: 4px;
+  border-bottom: 2px solid transparent;
+}
+.site-head nav a:hover,
+.site-head nav a[aria-current='page'] {
+  border-bottom-color: var(--blue);
+}
+
+.site-foot {
+  border-top: 1px solid var(--rule);
+  margin-top: 96px;
+  padding-block: 24px;
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+}
+.site-foot p {
+  margin: 0;
+  max-width: 78ch;
+}
+
+/* Buttons */
+.btn {
+  appearance: none;
+  font: 600 var(--step--1) / 1 var(--sans);
+  border: 1.5px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  padding: 13px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn:hover {
+  background: #22353f;
+}
+.btn.quiet {
+  background: transparent;
+  color: var(--ink);
+}
+.btn.quiet:hover {
+  background: var(--blue-tint);
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* The bubble: the one recurring mark. Oval, like the real answer sheet. */
+.bubble {
+  appearance: none;
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 20px;
+  padding: 0;
+  border: 1.5px solid var(--blue);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--blue);
+  font: 600 0.62rem / 1 var(--sans);
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease, transform 120ms ease;
+}
+.bubble:hover {
+  background: var(--blue-tint);
+}
+.bubble[aria-pressed='true'] {
+  background: var(--graphite);
+  border-color: var(--graphite);
+  color: var(--paper);
+  transform: scale(1.06);
+}
+.bubble.is-key {
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--blue);
+}
+.bubble.is-miss::after {
+  content: '';
+  position: absolute;
+  left: -3px;
+  right: -3px;
+  top: 50%;
+  height: 2px;
+  background: var(--red);
+  transform: rotate(-24deg);
+}
+.bubble:disabled {
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble {
+    transition: none;
+  }
+  .bubble[aria-pressed='true'] {
+    transform: none;
+  }
+}
+
+/* KaTeX sits inside Literata; match the weight and keep display math off the measure */
+.katex {
+  font-size: 1.04em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

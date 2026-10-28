@@ -23,3 +23,7 @@ Difficulty bands come from position only (five questions per band) until student
 The extraction and cropping scripts carry over to other AAPT papers, including the A and B forms. The slow part is transcribing math choices from page images and writing the tags, roughly 30 KB of JSON per 25-question paper. Claude usage for this pilot was not measured inside the session. Check `/cost` before and after the next paper to get a real per-paper number before committing to eight years of three competitions.
 
 USNCO Part I has 60 questions. Check those PDFs for a text layer and vector figures before assuming this pipeline fits.
+
+## Added with 2023
+
+Two things the 2024 paper did not exercise. AAPT accepted a second answer for 2023 Q15 after the exam, so the key extractor returns every marked letter and the data holds `also_accepted`. And two 2023 questions (15, 23) cross a page break, so the cropper stacks the pieces from each page.

@@ -7,9 +7,9 @@
 
 ## Paper file
 
-`paper` holds the metadata that becomes an `exam_papers` row, `tagging` records how the file was made, and `questions` has one entry per question: `stem` and `solution` in LaTeX-flavored text, `choices` as five strings, `answer_index`, `format` (calc, concept, or graph), `difficulty_band` (1 to 5), `topics` with weights, and `skills`.
+`paper` holds the metadata that becomes an `exam_papers` row, `tagging` records how the file was made, and `questions` has one entry per question: `stem` and `solution` in LaTeX-flavored text, `choices` as five strings, `answer_index`, `also_accepted` (extra indexes the exam board accepted later, as in 2023 Q15), `format` (calc, concept, graph, or figure), `difficulty_band` (1 to 5), `topics` with weights, and `skills`.
 
-Graph questions have `choices: null`. Their answer choices are drawings, so `figure_ref` points to a `-full.png` crop of the whole question. Other figures are `-diagram.png` crops of the stem diagram only.
+Graph and figure questions have `choices: null`. Their answer choices are plots (graph) or drawings (figure), so `figure_ref` points to a `-full.png` crop of the whole question. A question that runs across a page break is stacked into one image. Other figures are `-diagram.png` crops of the stem diagram only.
 
 Stems are transcribed verbatim, typos included. Solutions are short summaries in our own words, not the official text.
 

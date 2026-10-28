@@ -54,6 +54,7 @@ create table questions (
   stem                text,                      -- null for USABO (tags only, CEE terms)
   choices             jsonb,
   answer_index        int,
+  also_accepted       int[] not null default '{}',   -- extra indexes the exam board accepted later
   solution            text,
   figure_ref          text,
   format              text not null,             -- calc | concept | data | pedigree | experiment ...

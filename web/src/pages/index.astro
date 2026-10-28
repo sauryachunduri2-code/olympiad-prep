@@ -1,0 +1,206 @@
+---
+import Base from '../layouts/Base.astro';
+import { loadPapers, paperTitle } from '../lib/papers';
+import { rich, richInline } from '../lib/math';
+
+const papers = loadPapers();
+const sample = papers.find((p) => p.id === 'fma-2024')!;
+const q = sample.questions[0];
+const letters = ['A', 'B', 'C', 'D', 'E'];
+const fmaCount = papers.filter((p) => p.paper.competition_id === 'fma').length;
+---
+
+<Base title="Olympiad Prep: practice on the real exams">
+  <section class="hero wrap" data-hero data-answer={q.answer_index}>
+    <div class="intro">
+      <h1>Practice on the real exams.</h1>
+      <p class="lede">
+        Sit past F=ma papers under the clock, see your score by topic, and read how each question is
+        solved. USNCO and USABO material is on the way.
+      </p>
+      <a class="btn" href={`/papers/${sample.id}/`}>Sit the {paperTitle(sample)} paper</a>
+      <a class="btn quiet" href="/hub/">Browse the Hub</a>
+    </div>
+
+    <div class="question" aria-labelledby="hero-q">
+      <p class="source" id="hero-q">From the {paperTitle(sample)} exam, question 1</p>
+      <div class="stem" set:html={rich(q.stem)} />
+      <ol class="choices">
+        {
+          q.choices!.map((c, i) => (
+            <li>
+              <button class="bubble" type="button" data-choice={i} aria-pressed="false" aria-label={`Choice ${letters[i]}`}>
+                {letters[i]}
+              </button>
+              <span set:html={richInline(c)} />
+            </li>
+          ))
+        }
+      </ol>
+      <div class="reveal" hidden aria-live="polite">
+        <p class="verdict"></p>
+        <div class="why" set:html={rich(q.solution)} />
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap now">
+    <div>
+      <h3>Sit a full paper</h3>
+      <p>
+        {fmaCount} F=ma papers are ready, 25 questions each, with the same 75-minute limit as the real
+        thing. Your answers go on an answer sheet like the one in the exam room.
+      </p>
+    </div>
+    <div>
+      <h3>Find your weak topics</h3>
+      <p>
+        Every question is tagged by subtopic, so your results show where points went: kinematics,
+        rotation, fluids, and so on.
+      </p>
+    </div>
+    <div>
+      <h3>Read the official sources</h3>
+      <p>
+        The Hub links every exam and solution PDF at its publisher, and lists past USABO cutoff scores
+        so you know what a qualifying score looked like.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-hero]')!;
+  const key = Number(root.dataset.answer);
+  const buttons = root.querySelectorAll<HTMLButtonElement>('.bubble');
+  const reveal = root.querySelector<HTMLElement>('.reveal')!;
+  const verdict = root.querySelector<HTMLElement>('.verdict')!;
+  const letters = ['A', 'B', 'C', 'D', 'E'];
+
+  buttons.forEach((btn) =>
+    btn.addEventListener('click', () => {
+      const picked = Number(btn.dataset.choice);
+      buttons.forEach((b) => {
+        const i = Number(b.dataset.choice);
+        b.setAttribute('aria-pressed', String(i === picked));
+        b.classList.toggle('is-key', i === key);
+        b.classList.toggle('is-miss', i === picked && i !== key);
+        b.disabled = true;
+      });
+      verdict.textContent =
+        picked === key ? `Correct. The answer is ${letters[key]}.` : `Not this one. The answer is ${letters[key]}.`;
+      verdict.dataset.ok = String(picked === key);
+      reveal.hidden = false;
+    }),
+  );
+</script>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: clamp(32px, 6vw, 88px);
+    padding-top: clamp(40px, 8vw, 88px);
+    align-items: start;
+  }
+  .intro h1 {
+    max-width: 11ch;
+    margin-bottom: 20px;
+  }
+  .lede {
+    font-size: var(--step-1);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+  .intro .btn {
+    margin: 0 10px 10px 0;
+  }
+
+  .question {
+    background: var(--sheet);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--blue);
+    border-radius: 3px;
+    padding: clamp(20px, 3vw, 32px);
+  }
+  .source {
+    font: 560 var(--step--1) / 1.3 var(--sans);
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .stem :global(p) {
+    margin-bottom: 0.9em;
+  }
+  .choices {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+  }
+  .choices li {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    align-items: center;
+    gap: 14px;
+    padding-block: 5px;
+  }
+  .reveal {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+  .verdict {
+    font: 650 var(--step-0) / 1.3 var(--sans);
+    margin-bottom: 8px;
+  }
+  .verdict[data-ok='false'] {
+    color: var(--red);
+  }
+  .verdict[data-ok='true'] {
+    color: var(--blue);
+  }
+  .why :global(p) {
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .now {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: clamp(56px, 9vw, 104px);
+    border-top: 1px solid var(--rule);
+  }
+  .now > div {
+    padding: 28px clamp(0px, 2vw, 28px) 0 0;
+  }
+  .now > div + div {
+    padding-left: clamp(0px, 2vw, 28px);
+    border-left: 1px solid var(--rule);
+  }
+  .now h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+  }
+  .now p {
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 860px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+    .now {
+      grid-template-columns: 1fr;
+    }
+    .now > div + div {
+      padding-left: 0;
+      border-left: 0;
+      border-top: 1px solid var(--rule);
+      margin-top: 24px;
+    }
+  }
+</style>

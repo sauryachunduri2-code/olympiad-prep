@@ -1,0 +1,110 @@
+---
+import Base from '../../layouts/Base.astro';
+import '../../styles/paper.css';
+import { loadPapers, paperTitle, topicNames } from '../../lib/papers';
+import { rich, richInline } from '../../lib/math';
+
+export function getStaticPaths() {
+  return loadPapers().map((paper) => ({ params: { id: paper.id }, props: { paper } }));
+}
+
+const { paper } = Astro.props;
+const names = topicNames();
+const title = paperTitle(paper);
+const { question_count: count, time_limit_minutes: minutes, constants } = paper.paper;
+
+const data = {
+  id: paper.id,
+  title,
+  limitSeconds: minutes * 60,
+  solutionsUrl: paper.paper.solutions_url,
+  constants,
+  questions: paper.questions.map((q) => {
+    const full = !!q.figure_ref?.endsWith('-full.png');
+    const primary = q.topics.reduce((a, b) => (b.weight > a.weight ? b : a));
+    return {
+      n: q.number,
+      stem: full ? '' : rich(q.stem),
+      choices: q.choices ? q.choices.map(richInline) : null,
+      figure: q.figure_ref ? `/${q.figure_ref}` : null,
+      fullFigure: full,
+      answer: q.answer_index,
+      also: q.also_accepted,
+      topic: names[primary.slug] ?? primary.slug,
+      solution: rich(q.solution),
+    };
+  }),
+};
+const json = JSON.stringify(data).replace(/</g, '\\u003c');
+---
+
+<Base title={`${title}: Olympiad Prep`} current="hub" description={`Sit the ${title} paper under timed conditions.`}>
+  <div class="wrap paper" data-paper data-state="intro">
+    <section class="intro-panel">
+      <p class="crumb"><a href="/hub/#physics">Hub</a> / Physics</p>
+      <h1>{title}</h1>
+      <dl class="facts">
+        <div><dt>Questions</dt><dd>{count}, one point each</dd></div>
+        <div><dt>Time</dt><dd>{minutes} minutes</dd></div>
+        <div><dt>Scoring</dt><dd>No penalty for wrong or blank answers</dd></div>
+        <div><dt>Constants</dt><dd>{constants}</dd></div>
+      </dl>
+      <p>
+        The clock starts when you press Start and keeps running if you close the tab. Your answers save
+        as you go, so you can come back to a paper in progress. A calculator is allowed, but no formula
+        sheet.
+      </p>
+      <button class="btn" type="button" data-start>Start the paper</button>
+      <p class="source">
+        Official <a href={paper.paper.source_url}>exam</a>{' '}and{' '}
+        <a href={paper.paper.solutions_url}>solutions</a> from AAPT.
+      </p>
+      <div class="history" hidden>
+        <h2>Your attempts</h2>
+        <ul></ul>
+      </div>
+    </section>
+
+    <section class="test-panel">
+      <div class="bar">
+        <h1>{title}</h1>
+        <p class="constants">{constants}</p>
+        <p class="timer" role="timer" aria-live="off"><span class="sr-only">Time left </span><span data-clock>--:--</span></p>
+        <button class="btn" type="button" data-submit>Submit paper</button>
+      </div>
+      <div class="confirm" hidden role="alertdialog" aria-labelledby="confirm-title">
+        <h2 id="confirm-title">Submit the paper?</h2>
+        <p data-confirm-text></p>
+        <button class="btn" type="button" data-confirm-yes>Submit and see results</button>
+        <button class="btn quiet" type="button" data-confirm-no>Keep working</button>
+      </div>
+      <div class="test-grid">
+        <div class="qpane">
+          <div id="qbody"></div>
+          <div class="qnav">
+            <button class="btn quiet" type="button" data-prev>Previous</button>
+            <button class="btn quiet" type="button" data-flag aria-pressed="false">Flag for review</button>
+            <button class="btn quiet" type="button" data-next>Next</button>
+          </div>
+          <p class="keys">Keys: A to E answers, left and right arrows move between questions, F flags.</p>
+        </div>
+        <aside class="sheet" aria-label="Answer sheet">
+          <h2>Answer sheet</h2>
+          <div id="sheet"></div>
+          <p class="count" data-count aria-live="polite"></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="results-panel">
+      <p class="crumb"><a href="/hub/#physics">Hub</a> / Physics</p>
+      <h1>{title} results</h1>
+      <div id="results"></div>
+    </section>
+  </div>
+
+  <script type="application/json" id="paper-data" set:html={json} />
+  <script>
+    import '../../scripts/test';
+  </script>
+</Base>

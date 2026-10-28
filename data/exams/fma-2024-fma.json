@@ -45,7 +45,8 @@
       ],
       "skills": [
         "projectile symmetry"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 2,
@@ -75,7 +76,8 @@
       ],
       "skills": [
         "banked-surface force balance"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 3,
@@ -101,7 +103,8 @@
       ],
       "skills": [
         "truss joint analysis"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 4,
@@ -126,7 +129,8 @@
       "skills": [
         "reading graphs",
         "energy vs time"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 5,
@@ -153,7 +157,8 @@
       "skills": [
         "normal force on an incline",
         "system vs component"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 6,
@@ -177,7 +182,8 @@
       ],
       "skills": [
         "time-at-position distribution"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 7,
@@ -198,7 +204,8 @@
       "skills": [
         "transforming graphs",
         "v vs x from v vs t"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 8,
@@ -229,7 +236,8 @@
       "skills": [
         "constraint kinematics",
         "rigid-body velocities"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 9,
@@ -255,7 +263,8 @@
       ],
       "skills": [
         "work done by friction"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 10,
@@ -286,7 +295,8 @@
       "skills": [
         "rotating frame",
         "spring equilibrium"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 11,
@@ -312,7 +322,8 @@
       ],
       "skills": [
         "pressure on a projected area"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 12,
@@ -343,7 +354,8 @@
       "skills": [
         "torque from point-mass attraction",
         "vector components"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 13,
@@ -364,7 +376,8 @@
       "skills": [
         "limiting cases",
         "pulley constraint"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 14,
@@ -395,7 +408,8 @@
       "skills": [
         "common-velocity condition",
         "momentum plus energy"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 15,
@@ -421,7 +435,8 @@
       ],
       "skills": [
         "units of viscosity and surface tension"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 16,
@@ -447,7 +462,8 @@
       ],
       "skills": [
         "which variables can appear"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 17,
@@ -478,7 +494,8 @@
       "skills": [
         "springs in series",
         "pulley force bookkeeping"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 18,
@@ -509,7 +526,8 @@
       "skills": [
         "orbital energy",
         "perigee burn"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 19,
@@ -540,7 +558,8 @@
       "skills": [
         "physical pendulum",
         "moment of inertia of spokes"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 20,
@@ -570,7 +589,8 @@
       ],
       "skills": [
         "energy method for a coupled system"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 21,
@@ -596,7 +616,8 @@
       ],
       "skills": [
         "continuity plus Bernoulli"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 22,
@@ -622,7 +643,8 @@
       ],
       "skills": [
         "shell theorem"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 23,
@@ -653,7 +675,8 @@
       "skills": [
         "collision in a moving frame",
         "restitution"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 24,
@@ -684,7 +707,8 @@
       "skills": [
         "order-of-magnitude scaling",
         "drag"
-      ]
+      ],
+      "also_accepted": []
     },
     {
       "number": 25,
@@ -715,7 +739,8 @@
       "skills": [
         "variable effective radius",
         "energy split"
-      ]
+      ],
+      "also_accepted": []
     }
   ]
 }

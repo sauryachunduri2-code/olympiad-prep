@@ -52,6 +52,10 @@
         {
           "slug": "dimensional-analysis",
           "name": "Dimensional analysis and scaling"
+        },
+        {
+          "slug": "measurement",
+          "name": "Measurement, uncertainty, and estimation"
         }
       ]
     }
