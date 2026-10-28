@@ -30,3 +30,13 @@ It has two parts:
 ## Roadmap
 
 P0 data and tagging, P1 Hub and Replay mocks, P2 drills and numeric variants, P3 Ask the Sources, P4 biology generation. Details are in `docs/spec.md`.
+
+## Deploying
+
+The site is live at https://olympiad-prep.vercel.app. Deploys are manual: the build reads `data/`, which sits outside `web/`, so it runs on this machine and uploads the result.
+
+```
+cd web
+npx vercel build --prod --yes
+npx vercel deploy --prebuilt --prod
+```
