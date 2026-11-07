@@ -33,7 +33,7 @@ P0 data and tagging, P1 Hub and Replay mocks, P2 drills and numeric variants, P3
 
 ## Deploying
 
-The site is live at https://olympiad-prep.vercel.app. Deploys are manual: the build reads `data/`, which sits outside `web/`, so it runs on this machine and uploads the result.
+The site is live at https://olympiad-prep.vercel.app.
 
 ```
 cd web
